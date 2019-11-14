@@ -1,0 +1,201 @@
+# English Locale Messages
+
+#Navigation
+nav.rules=Rule Designer
+nav.metadata=Metadata Explorer
+nav.operns=Operations
+nav.dqcheck=Data Integrity
+nav.reports=Reports
+nav.dashboard=Dashboard
+
+#Left Menu
+menu.ruleDesign=Rule
+menu.fxDesign=Formula
+menu.create=Create
+menu.modify=Modify
+menu.view=View
+menu.mstData=Master Data
+menu.mstEdit=Edit Masters
+menu.mstView=View Masters
+menu.user.pass=Change Password
+menu.user.general=General Settings
+
+#Buttons
+button.go=Go
+button.submit=Submit
+button.reset=Reset
+button.add=Add
+button.del=Delete
+label.upload = Upload
+
+#Label
+label.login.username=USERNAME
+label.login.password=PASSWORD
+form.login=Login
+caption.changePasssword=Change your password
+label.oPassword=Old Password
+label.nPassword=New Password
+label.cPassword=Confirm Password
+label.remarks=Remarks
+label.home=Home Page
+label.locale=Language
+label.email=Email Address
+label.address=Postal Address
+label.phone=Phone Number
+label.submit=Submit
+
+label.ruleName=Scenario Name
+label.ruleDesc=Description
+label.ruleType=Type
+label.cat.reclass=Mapping
+label.cat.bus=Calculation
+label.updateTable=Data Table
+label.source=Source
+label.destination=Destination
+label.table=Table
+label.column=Column
+label.bc=Band Condition
+label.createRule=Create Rule
+label.modifyRule=Modify Rule
+label.viewRule=View Rule
+label.editRule=Edit Rule
+label.jobName=Job Name
+label.createJob=Create Job
+label.aggregate=Aggregate
+label.formula=Formula Name
+label.fx.existing=Use existing
+label.fx.null=Select...
+label.fx.sum=SUM
+label.fx.avg=AVG
+label.fx.max=MAX
+label.fx.min=MIN
+label.fx.cnt=COUNT
+label.fx.cnd=COUNT DISTINCT
+label.fx.fxid=Formula ID:
+label.fx.value=Value:
+label.fx.target=Target Column:
+label.fx.mapping=Mapping (Type || Fx ID / Value String || Column Name)
+label.list.jobs=List all jobs
+
+label.searchid=Search ID
+
+# Table Header
+caption.rulename=Rule Name: 
+caption.fields=Database Fields
+caption.operand=Functions & Operators
+caption.eBuilder=Expression Builder
+caption.fxList=List of formula
+caption.fxid=Formula ID
+caption.fxname=Formula Name
+
+filterTable.1=Execution ID
+filterTable.2=Execution Name
+filterTable.3=Job Name
+filterTable.4=Information Date
+filterTable.5=Execution Date
+
+#BreadCrumb
+breadcrumb.rfw.rule.create=Rule Designer >> Rule >> Create
+breadcrumb.rfw.rule.edit=Rule Designer >> Rule >> Modify
+breadcrumb.rfw.rule.view=Rule Designer >> Rule >> View
+
+breadcrumb.rfw.fx.create=Rule Designer >> Formula >> Create
+breadcrumb.rfw.fx.edit=Rule Designer >> Formula >> Modify
+breadcrumb.rfw.fx.view=Rule Designer >> Formula >> View
+
+breadcrumb.ops.design=Operations >> Design Job
+breadcrumb.ops.monitor=Operations >> Monitor Job
+breadcrumb.ops.execute=Operations >> Execute Job
+
+breadcrumb.createUser=Administration >> User Management >> Create User
+breadcrumb.modifyUser=Administration >> User Management >> Modify User
+breadcrumb.sackUser=Administration >> User Management >> Sack User
+
+breadcrumb.adminSysLog=Administration >> Audit Logs >> System Log
+breadcrumb.adminOpsLog=Administration >> Audit Logs >> Operations Log
+breadcrumb.adminPrsLog=Administration >> Audit Logs >> Process Log
+
+breadcrumb.test=Reports >> Stress Test
+breadcrumb.details=Reports >> Stress Test Details
+
+#Messages
+func.success=Commit successful
+func.failure=Commit Failed. Please check the logs for further details
+msg.rule.null=Rule name cannot be empty
+msg.rule.100=Length of rule name cannot be greater than 100
+msg.rule.duplicate=Rule with the same name exists
+msg.ruleDesc.length=Length of rule description cannot be greater than 1000
+msg.update.table=Update table cannot be null
+msg.destination.table=Destination field cannot be null
+msg.source.selection=Minimum one source field should be selected
+msg.bc.null=Band condition cannot be null
+msg.fxWarning.exists=Following rules will get affected:
+
+#Admin Form
+label.userid=User ID
+label.userName=User name
+label.passwd=Password
+label.enabled=Account enabled
+label.active=Account active
+label.roles=Role / Group
+label.session=Session time(secs)
+label.failedAttempt=Allowed failed login attempts
+label.passExpiry=Password expires after(days) 
+label.dateBetween=Date between
+label.action=Action
+label.result=Result
+label.ipAddress=IP Address
+label.time=Time
+label.date=Date
+label.actionDesc=Action Description
+label.status=Status
+caption.admin.userlist=List of users
+caption.admin.sysLog=Application sys log
+caption.admin.opsLog=Application operations log
+
+label.admin.userman = User Management
+label.admin.create = Create User
+label.admin.modify = Modify User
+label.admin.rmap = Map roles
+label.admin.sack = Sack User
+label.admin.audit = Audit Logs
+label.admin.sys = System log
+label.admin.ops = Operations log
+label.admin.prs = Process log
+label.admin.defrag = Defrag Tables
+
+#Server Messages
+title=Asymmetrix Capital Engine
+footer=Asymmetrix Solutions Private Limited &reg;
+welcome=Welcome
+login.sessionExpired=Your session has expired
+accessDenied=HTTP Status 403 - Access is denied
+message=Message
+internalError=Internal Server Error!
+logout=You've been logged out successfully
+lastLogin=Last login time
+AbstractUserDetailsAuthenticationProvider.badCredentials=Invalid username or password
+AbstractUserDetailsAuthenticationProvider.credentialsExpired=Your password has expired. Please, contact the administrator.
+AbstractUserDetailsAuthenticationProvider.locked=Your account is locked. Please, contact the administrator.
+AbstractUserDetailsAuthenticationProvider.disabled=Logins to this account is disabled due to multiple failed login attempts
+failedLogin = Failed to login
+login.sessionExpired=Your session has expired
+message=Message
+success=Saved successfully
+job.duplicate=Job name already exists
+maker.add=Add request submitted for approval
+maker.edit=Edit request submitted for approval
+maker.delete=Delete request submitted for approval
+maker.failure=Request failed
+admin.user.create=User {0} created successfully
+admin.user.duplicate=* User with this ID already exists
+admin.user.modify=User {0} modified 
+admin.sack.noSession=No active session for user {0}
+admin.sack.session=Active session of user {0} invalidated
+admin.defrag.fired=Defrag job fired successfully
+job.fire.success=Batch "{0}" fired
+job.fire.failed=Failed to fire {0}. Please check the application log.
+
+jqgrid.button.view=View Details
+jqgrid.header.info=Info
+jqgrid.alert.noselect=Please select a row

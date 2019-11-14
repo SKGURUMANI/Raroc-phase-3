@@ -1,0 +1,653 @@
+/*!
+ * Start Bootstrap - SB Admin 2 Bootstrap Admin Theme (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+body, html {
+  height: 100%;
+  font-size: 0.9em;
+  background-color: #AE285D;
+}
+body.login {
+  background-color: #fff;  
+}
+form, label {
+  font-weight: normal;
+}
+#wrapper {
+    height: 100%;
+    width: 100%;
+}
+#page-wrapper {
+    padding: 0 15px;
+    background-color: #fff;
+    min-height: 92%;
+}
+@media(min-width:768px) {
+    .page-wrapper-with-sidebar {
+        position: inherit;
+        margin: 0 0 0 250px;
+        padding: 0 30px;
+        border-left: 1px solid #7fb2cc;
+    }
+    .checkbox-custom,
+    .radio-custom {
+        position: relative;
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 10px
+    }
+    .checkbox-custom label,
+    .radio-custom label {
+        min-height: 22px;
+        margin-bottom: 0;
+        font-weight: 300;
+        cursor: pointer
+    }
+    .checkbox-custom input[type=checkbox],
+    .radio-custom input[type=radio] {
+        position: absolute;
+        margin-left: -20px;
+        margin-top: 0;
+        margin-bottom: 0
+    }
+    .checkbox-custom.disabled label,
+    .radio-custom.disabled label,
+    fieldset[disabled] .checkbox-custom label,
+    fieldset[disabled] .radio-custom label {
+        cursor: not-allowed
+    }
+    .input-group-addon .checkbox-custom,
+    .input-group-addon .radio-custom {
+        margin: 0
+    }
+    .checkbox-custom {
+        padding-left: 20px
+    }
+    .checkbox-custom label {
+        display: inline-block;
+        vertical-align: middle;
+        position: relative;
+        padding-left: 10px
+    }
+    .checkbox-custom label:empty {
+        padding-left: 0
+    }
+    .checkbox-custom label::before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        left: 0;
+        margin-left: -20px;
+        border: 1px solid #e0e0e0;
+        border-radius: 3px;
+        background-color: #fff;
+        -webkit-transition: all .3s ease-in-out 0s;
+        -o-transition: all .3s ease-in-out 0s;
+        transition: all .3s ease-in-out 0s
+    }
+    .checkbox-custom label::after {
+        display: inline-block;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        left: 0;
+        top: 0;
+        margin-left: -20px;
+        text-align: center;
+        padding-top: 1px;
+        font-size: 12px;
+        color: #757575
+    }
+    .checkbox-custom input[type=radio],
+    .checkbox-custom input[type=checkbox] {
+        opacity: 0;
+        z-index: 1;
+        width: 20px;
+        height: 20px
+    }
+    .checkbox-custom input[type=radio]:focus+label::before,
+    .checkbox-custom input[type=checkbox]:focus+label::before {
+        outline: thin dotted;
+        outline: 5px auto -webkit-focus-ring-color;
+        outline-offset: -2px
+    }
+    .checkbox-custom input[type=radio]:checked+label::before,
+    .checkbox-custom input[type=checkbox]:checked+label::before {
+        border-color: #e0e0e0;
+        border-width: 10px;
+        -webkit-transition: all .3s ease-in-out 0s;
+        -o-transition: all .3s ease-in-out 0s;
+        transition: all .3s ease-in-out 0s
+    }
+    .checkbox-custom input[type=radio]:checked+label::after,
+    .checkbox-custom input[type=checkbox]:checked+label::after {
+        font-family: Material-Design-Iconic-Font;
+        content: '\f26b'
+    }
+    .checkbox-custom input[type=radio]:disabled+label,
+    .checkbox-custom input[type=checkbox]:disabled+label {
+        opacity: .65
+    }
+    .checkbox-custom input[type=radio]:disabled+label::before,
+    .checkbox-custom input[type=checkbox]:disabled+label::before {
+        background-color: #eee;
+        border-color: #e0e0e0;
+        border-width: 1px;
+        cursor: not-allowed
+    }
+    .checkbox-custom.checkbox-circle label::before {
+        border-radius: 50%
+    }
+    .checkbox-custom.checkbox-inline {
+        margin-top: 0;
+        display: inline-block;
+        margin-bottom: 0
+    }
+    .checkbox-inline+.checkbox-inline {
+        margin-left: 20px
+    }
+}
+.navbar-top-links {
+    margin-right: 0;
+}
+.navbar-top-links li {
+    display: inline-block;
+}
+.navbar-top-links li:last-child {
+    margin-right: 15px;
+}
+.navbar-top-links li a {    
+    padding: 15px;
+    min-height: 50px;
+}
+.navbar-top-links .dropdown-menu li {
+    display: block;
+}
+.navbar-top-links .dropdown-menu li:last-child {
+    margin-right: 0;
+}
+.navbar-top-links .dropdown-menu li a {
+    padding: 3px 20px;
+    min-height: 0;
+}
+.navbar-top-links .dropdown-menu li a div {
+    white-space: normal;
+}
+.sidebar {
+    border-radius: 0;
+}
+.sidebar .sidebar-nav.navbar-collapse {
+    padding-right: 0;
+    padding-left: 0;
+}
+.sidebar .sidebar-search {
+    padding: 15px;
+}
+.sidebar ul li {
+    background-color: #AE285D;
+    border-bottom: 1px solid #800040;
+}
+.sidebar ul li:first-child {    
+    border-top: 1px solid #800040;
+}
+.sidebar ul li.open {
+    background-color: #660000;
+}
+.sidebar ul li.active a:hover {
+    background-color: #660000;
+}
+.sidebar .arrow {
+    float: right;
+}
+.sidebar .fa.arrow:before {
+    content: "\f104";
+}
+.sidebar .active>a>.fa.arrow:before {
+    content: "\f107";
+}
+.sidebar .nav-second-level li:last-child,
+.sidebar .nav-third-level li:last-child {
+    border-bottom: none;
+}
+.sidebar .nav-second-level li a {
+    padding-left: 37px;
+}
+.sidebar .nav-third-level li a {
+    padding-left: 52px;
+}
+@media(min-width:768px) {
+    .sidebar {
+        z-index: 1;
+        position: absolute;
+        width: 250px;
+        margin-top: 51px;        
+    }
+    .navbar-top-links .dropdown-messages,
+    .navbar-top-links .dropdown-tasks,
+    .navbar-top-links .dropdown-alerts {
+        margin-left: auto;
+    }
+}
+.sidebar-tree {
+    border-radius: 0;    
+}
+.sidebar-tree .jstree li a {
+    color: #fff !important;
+    white-space: normal !important;
+    height: auto;
+    padding: 1px 2px;
+}
+.sidebar-tree .sidebar-nav.navbar-collapse {
+    padding-right: 0;
+    padding-left: 0;
+}
+@media(min-width:768px) {
+    .sidebar-tree {
+        z-index: 1;
+        position: absolute;
+        width: 250px;
+        max-width: 200px;
+        margin-top: 51px;        
+    }
+}
+.btn-outline {
+    color: inherit;
+    background-color: transparent;
+    transition: all .5s;
+}
+.btn-primary.btn-outline {
+    color: #428bca;
+}
+.btn-success.btn-outline {
+    color: #5cb85c;
+}
+.btn-info.btn-outline {
+    color: #5bc0de;
+}
+.btn-warning.btn-outline {
+    color: #f0ad4e;
+}
+.btn-danger.btn-outline {
+    color: #d9534f;
+}
+.btn-primary.btn-outline:hover,
+.btn-success.btn-outline:hover,
+.btn-info.btn-outline:hover,
+.btn-warning.btn-outline:hover,
+.btn-danger.btn-outline:hover {
+    color: #fff;
+}
+.chat {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.chat li {
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px dotted #999;
+}
+.chat li.left .chat-body {
+    margin-left: 60px;
+}
+.chat li.right .chat-body {
+    margin-right: 60px;
+}
+.chat li .chat-body p {
+    margin: 0;
+}
+.panel .slidedown .glyphicon,
+.chat .glyphicon {
+    margin-right: 5px;
+}
+.chat-panel .panel-body {
+    height: 350px;
+    overflow-y: scroll;
+}
+.login-panel {
+    margin-top: 25%;    
+}
+.login-panel .panel-heading {
+    color: #ef7f1b;
+}
+.login-panel .panel-heading h2 {
+    font-size: 22px;
+    margin: 0px;
+    text-align: center;
+}
+.login-panel .panel-body {
+    color: #333;
+}
+img.bank-logo {
+  width: 100%; 
+  max-height: 100%;
+  padding: 15px 0;
+}
+img.bct-logo {
+  margin: 0px auto;
+  padding: 15px 0;
+}
+.tree-panel {
+    height: 300px;
+    overflow-y: auto;
+}
+.panel-breadcrumb {   
+   border-color: #ddd;
+   border-left: 4px solid #AE285D;
+   -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.3);
+   box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+.panel-breadcrumb a {
+  color: #337ab7;
+}
+.panel-breadcrumb a:visited {
+  color: #999;
+}
+.flot-chart {
+    display: block;
+    height: 250px;
+}
+.flot-chart-content {
+    width: 100%;
+    height: 100%;
+}
+.dataTables_wrapper {
+    position: relative;
+    clear: both;
+}
+table.dataTable thead .sorting,
+table.dataTable thead .sorting_asc,
+table.dataTable thead .sorting_desc,
+table.dataTable thead .sorting_asc_disabled,
+table.dataTable thead .sorting_desc_disabled {
+    background: 0 0;
+}
+table.dataTable thead .sorting_asc:after {
+    content: "\f0de";
+    float: right;
+    font-family: fontawesome;
+}
+table.dataTable thead .sorting_desc:after {
+    content: "\f0dd";
+    float: right;
+    font-family: fontawesome;
+}
+table.dataTable thead .sorting:after {
+    content: "\f0dc";
+    float: right;
+    font-family: fontawesome;
+    color: rgba(50,50,50,.5);
+}
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    padding: 6px 0;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.428571429;
+}
+.btn-circle.btn-lg {
+    width: 50px;
+    height: 50px;
+    padding: 10px 16px;
+    border-radius: 25px;
+    font-size: 18px;
+    line-height: 1.33;
+}
+.btn-circle.btn-xl {
+    width: 70px;
+    height: 70px;
+    padding: 10px 16px;
+    border-radius: 35px;
+    font-size: 24px;
+    line-height: 1.33;
+}
+.show-grid [class^=col-] {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid #ddd;
+    background-color: #eee!important;
+}
+.show-grid {
+    margin: 15px 0;
+}
+.huge {
+    font-size: 40px;
+}
+.panel-green {
+    border-color: #5cb85c;
+}
+.panel-green .panel-heading {
+    border-color: #5cb85c;
+    color: #fff;
+    background-color: #5cb85c;
+}
+.panel-green a {
+    color: #5cb85c;
+}
+.panel-green a:hover {
+    color: #3d8b3d;
+}
+.panel-red {
+    border-color: #d9534f;
+}
+.panel-red .panel-heading {
+    border-color: #d9534f;
+    color: #fff;
+    background-color: #d9534f;
+}
+.panel-red a {
+    color: #d9534f;
+}
+.panel-red a:hover {
+    color: #b52b27;
+}
+.panel-yellow {
+    border-color: #f0ad4e;
+}
+.panel-yellow .panel-heading {
+    border-color: #f0ad4e;
+    color: #fff;
+    background-color: #f0ad4e;
+}
+.panel-yellow a {
+    color: #f0ad4e;
+}
+.panel-yellow a:hover {
+    color: #df8a13;
+}
+.footer  {
+    padding-top: 3px;
+    height: 24px; 
+    border-top: 1px solid #DDDDDD;
+    text-align: center
+}
+.page-header {
+    margin-top: 20px;
+}
+.custom-search-form button {
+    padding: 9px 12px;
+}
+.marginL {
+    margin-left: 10px;
+}
+.marginTop {
+    margin-top: 20px;
+}
+.paddinTop {
+    padding-top: 10px;
+}
+.form-table td {
+    padding: 5px;
+}
+fieldset.scheduler-border {
+    border: 1px groove #ddd !important;
+    padding: 0 1.4em 1.4em 1.4em !important;
+    margin: 0 0 1.5em 0 !important;
+    -webkit-box-shadow: 0px 0px 0px 0px #000;
+    box-shadow: 0px 0px 0px 0px #000;
+}
+legend.scheduler-border {
+    font-size: 1.2em !important;
+    text-align: left !important;
+    width:auto;
+    padding:0 10px;
+    border-bottom:none;
+}
+form label {
+    font-weight: normal;
+}
+.loading {
+  padding-top: 200px;   
+  text-align: center;
+}
+div.circle {
+    display: inline-block;    
+    margin-right: 5px;
+    height: 10px;
+    width: 10px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -khtml-border-radius: 50%;
+    border-radius: 50%;
+    *vertical-align: middle;
+    *display: inline;
+    *zoom: 1;
+}
+div.circleLeft {
+    float: left;
+    margin-left: 5px;
+    margin-top: 3px;
+}
+div.red {background-color: red}
+.navbar-button {
+    float: left;
+    margin: 10px 0 0 5px;
+}
+.tab-pane {
+    padding-top: 10px; 
+}
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+
+  > .col,
+  > [class*="col-"] {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+.no-padding {
+    padding-right: 0;
+    padding-left: 0;
+}
+/* Typeahead */
+.typeahead,
+.tt-query,
+.tt-hint {
+  height: 34px;
+  padding: 6px 12px;
+  line-height: 30px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+.typeahead {
+  background-color: #fff;
+}
+.typeahead:focus {
+  border: 1px solid #0097cf;
+}
+.tt-query {
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+.tt-hint {
+  color: #999
+}
+.tt-menu {
+  width: 422px;
+  margin: 12px 0;
+  padding: 8px 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 8px;
+     -moz-border-radius: 8px;
+          border-radius: 8px;
+  -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+     -moz-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+          box-shadow: 0 5px 10px rgba(0,0,0,.2);
+  max-height: 200px;
+  overflow-y: auto;        
+}
+.tt-suggestion {
+  padding: 3px 20px;
+  font-size: 13px;
+  line-height: 24px;
+}
+.tt-suggestion:hover {
+  cursor: pointer;
+  color: #fff;
+  background-color: #AE285D;
+}
+.tt-suggestion.tt-cursor {
+  color: #fff;
+  background-color: #AE285D;
+}
+.tt-suggestion p {
+  margin: 0;
+}
+fieldset legend {
+    font-size: 17px;
+}
+#schedule label {
+    width: 200px;
+}
+.form-button {
+    height: 34px;
+    padding: 6px 0px;
+}
+.btn-md {
+    width: 200px;
+}
+/* bootstrap jqGrid CSS */
+.ui-jqgrid.ui-jqgrid-bootstrap .ui-jqgrid-caption {
+    border-bottom: 1px solid #ddd;
+    background-color: #f5f5f5;
+}
+.ui-jqgrid.ui-jqgrid-bootstrap .ui-jqgrid-hdiv {   
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #ddd;    
+}
+.ui-jqgrid .ui-jqgrid-labels > .ui-th-column > .ui-jqgrid-resize {
+    height: 24px;
+}
+.ui-jqgrid .ui-jqgrid-labels > .ui-th-column {
+    padding-top: 4px;
+    font-weight: normal;
+}
+.ui-jqdialog.ui-jqgrid-bootstrap .ui-jqdialog-titlebar .ui-jqdialog-title, 
+.ui-jqgrid.ui-jqgrid-bootstrap .ui-jqgrid-errorbar .ui-jqgrid-error, 
+.ui-jqgrid.ui-jqgrid-bootstrap .ui-jqgrid-titlebar .ui-jqgrid-title {
+    font-size: 13px;
+}
+span.aggregation {
+    text-transform: capitalize;
+}
+.report-container {
+    overflow: scroll;
+}
+#defaultImg {text-align:center; margin-top: 50px;}
+
+#inner {
+    text-align:center;
+    width:100%;/*haslayout*/    
+    padding-bottom:31px; /*preserve footer space (plus 10px for text spacing)*/
+    background: #FFF/*set same as wrapper BG or none at all*/    
+}

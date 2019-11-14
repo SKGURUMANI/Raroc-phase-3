@@ -1,0 +1,89 @@
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+             xmlns:beans="http://www.springframework.org/schema/beans" 
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd        
+	http://www.springframework.org/schema/security
+	http://www.springframework.org/schema/security/spring-security.xsd">
+        
+    <!-- LDAP Authentication Success Handler -->
+    <beans:bean id="customFormLoginFilter" class="atrix.common.service.DecryptPasswordBeforeAuthentication">
+        <beans:property name="authenticationManager" ref="authenticationManager" />
+        <beans:property name="authenticationSuccessHandler" ref="successHandler" />
+        <beans:property name="authenticationFailureHandler" ref="failureHandler" />
+        <beans:property name="postOnly" value="true" />
+    </beans:bean>
+    
+    <beans:bean id="successHandler" class="atrix.common.service.AuthSuccessHandlerLDAP">
+        <beans:property name="defaultTargetUrl" value="/login" />
+    </beans:bean>    
+    
+    <beans:bean id="failureHandler" class="org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler" >
+        <beans:property name="defaultFailureUrl" value="/login" />
+    </beans:bean>
+    
+    <!--    <beans:bean id="authenticationSuccessHandler" class="atrix.common.service.AuthSuccessHandlerLDAP"/>   -->
+    
+    <beans:bean id="CustomFilter" class="atrix.common.util.CustomFilter"/>
+    
+    <beans:bean id="authenticationEntryPoint" class="atrix.common.controller.AjaxAwareEntryPoint">        
+        <beans:constructor-arg name="loginUrl" value="/login"/>
+    </beans:bean>
+    
+    <beans:bean id="authenticationTrustResolver" class="org.springframework.security.authentication.AuthenticationTrustResolverImpl" />
+    
+    <beans:bean id="logoutSuccessHandler" class="atrix.common.service.LogoutSuccessHandler">
+        <beans:property name="defaultTargetUrl" value="/logout"/>
+        <beans:property name="alwaysUseDefaultTargetUrl" value="true"/>
+    </beans:bean>
+    
+    <beans:bean id="sessionRegistry" class="org.springframework.security.core.session.SessionRegistryImpl"/>
+    
+    <http pattern="/resources/**" security="none"/>
+    <http auto-config="false" use-expressions="true" entry-point-ref="authenticationEntryPoint" 
+          disable-url-rewriting="true">              
+        <intercept-url pattern="/" access="permitAll"/>                
+        <intercept-url pattern="/login" access="permitAll"/>
+        <intercept-url pattern="/login/sessionExpired" access="permitAll"/>
+        <intercept-url pattern="/logout" access="permitAll"/>           
+        <intercept-url pattern="/index" access="fullyAuthenticated"/>
+        <intercept-url pattern="/raroc/**" access="hasAnyRole('ROLE_RAROC_CORP','ROLE_TREASURY') and fullyAuthenticated"/>
+        <intercept-url pattern="/rarocAuth/**" access="hasRole('ROLE_RAROC_AUTH') and fullyAuthenticated"/>
+        <intercept-url pattern="/reports/**" access="hasRole('ROLE_USER') and fullyAuthenticated"/>
+        <intercept-url pattern="/dashboard/**" access="hasRole('ROLE_USER') and fullyAuthenticated"/>
+        <intercept-url pattern="/metadata/**" access="hasRole('ROLE_USER') and fullyAuthenticated"/>
+        <intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN') and fullyAuthenticated"/>
+        <intercept-url pattern="/rules/**" access="hasRole('ROLE_OPERATOR') and fullyAuthenticated"/>
+        <intercept-url pattern="/ruleMapping/**" access="hasRole('ROLE_OPERATOR') and fullyAuthenticated"/>
+        <intercept-url pattern="/operations/**" access="hasRole('ROLE_OPERATOR') and fullyAuthenticated"/>
+        <intercept-url pattern="/job/**" access="hasRole('ROLE_OPERATOR') and fullyAuthenticated"/>        
+        <intercept-url pattern="/forceChangePass" access="hasRole('ROLE_PASSWORD_CHANGE') and fullyAuthenticated"/>
+        <intercept-url pattern="/**" method="OPTIONS" access="denyAll"/>
+        <intercept-url pattern="/**" access="fullyAuthenticated"/>
+        <custom-filter position="FORM_LOGIN_FILTER" ref="customFormLoginFilter" />
+        <access-denied-handler error-page="/404"/>
+        <logout delete-cookies="JSESSIONID" success-handler-ref="logoutSuccessHandler"/>
+        <custom-filter after="BASIC_AUTH_FILTER" ref="CustomFilter"/>
+        <session-management>
+            <concurrency-control expired-url="/login/sessionExpired" max-sessions="1"
+                                 error-if-maximum-exceeded ="true"
+                                 session-registry-ref="sessionRegistry"/>
+        </session-management>
+    </http>
+    
+    <!-- LDAP Authentication And Authorization -->
+    <beans:bean id="userCtxAuthMapper" class="atrix.common.service.UserDetailsServiceLDAP"/>    
+    <beans:bean id="adAuthProvider" 
+                class="atrix.common.service.ADAuthenticationProvider">
+        <beans:constructor-arg value="${ldap.ad.domain}"/>
+        <beans:constructor-arg value="${ldap.ad.url}" />
+        <beans:property name="userDetailsContextMapper" ref="userCtxAuthMapper"/>
+        <beans:property name="useAuthenticationRequestCredentials" value="true"/>
+        <beans:property name="convertSubErrorCodesToExceptions" value="true"/>
+    </beans:bean>    
+    
+    <authentication-manager alias="authenticationManager">
+        <authentication-provider ref="adAuthProvider"/>
+    </authentication-manager>
+  
+</beans:beans>

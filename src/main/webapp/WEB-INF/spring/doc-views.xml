@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="XlsSysLog" class="atrix.common.view.admin.XLSSysLog"/>
+<bean id="PdfSysLog" class="atrix.common.view.admin.PDFSysLog"/>
+<bean id="XlsOpsLog" class="atrix.common.view.admin.XLSOpsLog"/>
+<bean id="PdfOpsLog" class="atrix.common.view.admin.PDFOpsLog"/>
+
+<bean id="XlsStressTest" class="atrix.st.view.XLSStressTest"/>
+<bean id="XlsRaroc" class="atrix.st.view.XLSRarocView"/>
+<bean id="PdfRaroc" class="atrix.st.view.PDFRarocView"/>
+
+</beans>

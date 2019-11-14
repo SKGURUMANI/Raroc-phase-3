@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"       
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+                           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+                           http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+                           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+                           http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd">
+     
+    <context:annotation-config/>
+    <context:component-scan base-package="atrix.common.controller, atrix.common.dao, atrix.common.service,
+                                          atrix.st.controller, atrix.st.dao, atrix.st.service,atrix.st.model, atrix.common.util"/>    
+ 
+    <mvc:annotation-driven/>     
+    <mvc:resources mapping="/resources/**" location="/resources/"/>
+    <mvc:default-servlet-handler/> 
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**/*"/>        
+            <bean id="webContentInterceptor" 
+                  class="org.springframework.web.servlet.mvc.WebContentInterceptor"
+                  p:cacheSeconds="0"
+                  p:useExpiresHeader="true"
+                  p:useCacheControlHeader="true"
+                  p:useCacheControlNoStore="true"/>
+        </mvc:interceptor>   
+        <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor"
+              p:paramName="lang"/>      
+    </mvc:interceptors>
+ 
+    <tx:annotation-driven transaction-manager="transactionManager"/>    
+    
+    <task:annotation-driven/>
+ 
+    <bean id="docViewResolver"
+          class="org.springframework.web.servlet.view.XmlViewResolver"
+          p:location="/WEB-INF/spring/doc-views.xml"
+          p:order="1"/>      
+ 
+    <bean id="jspViewResolver"
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+          p:viewClass="org.springframework.web.servlet.view.JstlView"
+          p:prefix="/WEB-INF/views/"
+          p:suffix=".jsp" 
+          p:order="2"/>
+
+<!--    <bean id="exceptionResolver" 
+          class="atrix.common.service.GlobalErrorHandler"
+          p:defaultErrorView = "common/error"/>-->
+          
+    <bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver"
+          p:defaultLocale="en"/>      
+ 
+    <bean id="messageSource"
+          class="org.springframework.context.support.ReloadableResourceBundleMessageSource"
+          p:basenames="WEB-INF/properties/i18n/message_en,WEB-INF/properties/i18n/help_en"          
+          p:defaultEncoding="UTF-8"/>                           
+    
+    <bean id="bcProvider" class="org.bouncycastle.jce.provider.BouncyCastleProvider"/>
+    
+    <bean id="environmentVariablesConfiguration" 
+          class="org.jasypt.encryption.pbe.config.EnvironmentPBEConfig"
+          p:algorithm="PBEWITHSHA256AND128BITAES-CBC-BC"
+          p:provider-ref="bcProvider"
+          p:password="master"/>
+ 
+    <bean id="configurationEncryptor" 
+          class="org.jasypt.encryption.pbe.StandardPBEStringEncryptor"
+          p:config-ref="environmentVariablesConfiguration"/>
+ 
+    <bean id="propertyConfigurer" 
+          class="org.jasypt.spring.properties.EncryptablePropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>/WEB-INF/properties/database/jdbc.properties</value>
+                <value>/WEB-INF/properties/general/app.properties</value>
+            </list>
+        </property>
+        <constructor-arg ref="configurationEncryptor"/>
+    </bean>
+ 
+    <bean id="dataSource"
+          class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close"
+          p:driverClassName="${jdbc.driverClassName}"
+          p:url="${jdbc.databaseurl}" 
+          p:username="${jdbc.username}"
+          p:password="${jdbc.password}"/>
+          
+    <bean id="transactionManager" 
+          class="org.springframework.jdbc.datasource.DataSourceTransactionManager" 
+          p:dataSource-ref="dataSource"/>
+          
+    <bean id="lobHandler" class="org.springframework.jdbc.support.lob.OracleLobHandler"        
+          p:nativeJdbcExtractor-ref="nativeJdbcExtractor"/>
+
+    <bean id="nativeJdbcExtractor" class="org.springframework.jdbc.support.nativejdbc.CommonsDbcpNativeJdbcExtractor"/>
+    
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"
+          p:maxUploadSize="50485760"/>
+          
+</beans>
