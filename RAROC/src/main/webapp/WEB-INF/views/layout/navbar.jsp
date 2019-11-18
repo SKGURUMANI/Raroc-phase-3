@@ -87,7 +87,7 @@
     }
 </style>
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-static-top" role="navigation">
+<nav class="navbar navbar-axis navbar-default navbar-static-top" role="navigation">
     <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse"
                 data-target=".navbar-collapse">
@@ -95,33 +95,11 @@
             <span class="icon-bar"></span> <span class="icon-bar"></span>
         </button>
     </div>
-    <!-- /.navbar-header -->
-    <div class="col-lg-6 hidden-sm hidden-xs help-block">
-        <div class="col-lg-12">
-            <small>${sessionScope.username} (${sessionScope.userroles})</small>
-        </div>
-        <div class="col-lg-12">
-            <small>Last Login: ${sessionScope.lastLogin}</small>
-        </div>
-    </div>
+    
     <ul class="nav navbar-top-links navbar-right">
         <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#"> <i class="fa fa-bars fa-fw"></i>
-                Main Menu
-            </a>
-            <ul class="dropdown-menu dropdown-tasks">
-                <sec:authorize url="/raroc">
-                    <li><a href="<c:url value='/raroc'/>"><i class="fa fa-dashboard fa-fw"></i>RAROC</a></li>
-                    </sec:authorize>
-                <li class="divider"></li>
-                    <sec:authorize url="/rarocAuth">
-                    <li><a href="<c:url value='/rarocAuth'/>"><i class="fa fa-dashboard fa-fw"></i>Admin RAROC</a></li>
-                    </sec:authorize>
-
-
-                <!--li class="divider"></li>
-<li><a href="#"><i class="fa fa-registered fa-fw"></i> Stats Module</a></li-->
-            </ul></li>
+            <small style="color: #fff;">Last Login: ${sessionScope.lastLogin}</small>
+         </li>
         <li class="dropdown"><a
                 href="<c:url value='${sessionScope.homepage}'/>"> <i
                     class="fa fa-home fa-fw"></i> Home
@@ -248,4 +226,16 @@
             </c:otherwise>
         </c:choose>
     </c:if>
+    <nav class="navbar  navbar-fixed-top"  style="top: 28px;">
+	      <div class="">
+	        <div class="navbar-header">
+	          <div class="LogoPart">
+	            <a class="navbar-brand logo"></a>
+	          </div>
+	          <div class="logoCurve"></div>
+	        </div>
+	        <div id="navbar" class="navbar-collapse collapse menu-container">
+	        </div>
+	      </div>
+      </nav>
 </nav>
