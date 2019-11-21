@@ -59,9 +59,9 @@
 		  </div>
 		  </div>
 		</div> --%>
-	  <nav class="navbar navbar-inverse navbar-fixed-top">
+	  <nav class="navbar1 navbar-inverse navbar-fixed-top">
 	      <div class="">
-	        <div class="navbar-header">
+	        <div class="navbar-header nav-logo-curve">
 	          <div class="LogoPart">
 	            <a class="navbar-brand logo"></a>
 	          </div>

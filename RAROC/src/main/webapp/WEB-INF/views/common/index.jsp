@@ -48,26 +48,37 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12">
-
-                            <div class="container">
-            <div class="row">                
-                <div class="col-md-4 col-md-offset-4">
-                    <div class="login-panel panel panel-default">
-                        <div class="panel-heading">
-                            <h5 class="calc">
-                               <%--  <img src="<c:url value="/resources/css/images/logo.png"/>"/> --%>
-                                RAROC Calculator
-                            </h5>
-                        </div>
-                        
-                    </div>                    
-                </div>
-            </div>
-            
-        </div>
-
-                        </div>
-                        <!-- /.col-lg-12 -->
+				            <div class="container">
+				            <div class="row">                
+				                <div class="col-md-3 col-md-offset-3 panel-view-1">
+				                    <sec:authorize url="/raroc">
+				                     <a href="<c:url value='/raroc'/>">
+					                    <div class="login-panel panel panel-default panel-border">
+					                        <div class="panel-heading panel-index">
+					                            <h4 class="calc calc-panel">
+					                                RAROC 
+					                            </h4>
+					                        </div>
+					                    </div>    
+				                     </a> 
+				                    </sec:authorize>                
+				                </div>
+				                 <div class="col-md-3 col-md-offset-3 panel-view-2">
+				                  <sec:authorize url="/rarocAuth">
+				                     <a href="<c:url value='/rarocAuth'/>">
+					                    <div class="login-panel panel panel-default panel-border">
+					                        <div class="panel-heading panel-index">
+					                            <h4 class="calc calc-panel">
+					                                RAROC Admin
+					                            </h4>
+					                        </div>
+					                    </div>  
+				                    </a>
+				                    </sec:authorize>                  
+				                </div>
+				            </div>
+				        </div>
+                      </div>
                     </div>
                 </div>
             </div>

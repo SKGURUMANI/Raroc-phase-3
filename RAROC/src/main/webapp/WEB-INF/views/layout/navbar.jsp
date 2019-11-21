@@ -95,10 +95,18 @@
             <span class="icon-bar"></span> <span class="icon-bar"></span>
         </button>
     </div>
-    
+    <!-- /.navbar-header -->
+    <%-- <div class="col-lg-6 hidden-sm hidden-xs help-block">
+        <div class="col-lg-12">
+            <small>${sessionScope.username} (${sessionScope.userroles})</small>
+        </div>
+        <div class="col-lg-12">
+            <small>Last Login: ${sessionScope.lastLogin}</small>
+        </div>
+    </div> --%>
     <ul class="nav navbar-top-links navbar-right">
         <li class="dropdown">
-            <small style="color: #fff;">Last Login: ${sessionScope.lastLogin}</small>
+            <small  style="color: #fff;">Last Login: ${sessionScope.lastLogin}</small>
          </li>
         <li class="dropdown"><a
                 href="<c:url value='${sessionScope.homepage}'/>"> <i
@@ -226,16 +234,59 @@
             </c:otherwise>
         </c:choose>
     </c:if>
+</nav>
     <nav class="navbar  navbar-fixed-top"  style="top: 28px;">
-	      <div class="">
-	        <div class="navbar-header">
+	       
+	        <div class="navbar-header nav-logo-curve">
 	          <div class="LogoPart">
 	            <a class="navbar-brand logo"></a>
 	          </div>
-	          <div class="logoCurve"></div>
+	          <div class="logoCurve" style="height: 70px;"></div>
 	        </div>
 	        <div id="navbar" class="navbar-collapse collapse menu-container">
+			     <div id="navbar" class="navbar-collapse collapse menu-container">
+		        	<div class="panel panel-breadcrumb" style="height: 84px;border-left: none;-webkit-box-shadow: 0 1px rgba(0,0,0,0.3);">
+                         <div class="panel-body">
+						    <%-- <ul class="nav navbar-nav">
+							    <li><a href="<c:url value='${sessionScope.homepage}'/>">Home</a></li>
+							     <li class="dropdown">
+								      <a href="#">Admin</a>
+									     <div class="dropdown-content">
+										    <a class="dropdown" href="#">User Management >></a>
+										    	<div class="dropdown-content">
+												    <a href="#">User Management</a>
+												    <a href="#">Audit Log</a>
+										  		</div>
+										    <a href="#">Audit Logs >></a>
+										  </div>
+							     </li>
+							     <li><a href="#">Help</a></li>
+							 </ul>
+ --%>                          
+							 <ul class="nav navbar-nav">
+							  <li><a href="#">Home</a></li>
+							  <li><a href="#">Admin</a>
+							    <ul>
+							      <li><a href="#">HTML</a></li>
+							      <li><a href="#">CSS</a>
+							        <ul>
+							          <li><a href="#">Resets</a></li>
+							          <li><a href="#">Grids</a></li>
+							          <li><a href="#">Frameworks</a></li>
+							        </ul>
+							      </li>
+							      <li><a href="#">JavaScript</a>
+							        <ul>
+							          <li><a href="#">Ajax</a></li>
+							          <li><a href="#">jQuery</a></li>
+							        </ul>
+							      </li>
+							    </ul>
+							  </li>
+							  <li><a href="#">Help</a></li>
+							</ul>
+						</div>
+                    </div> 
+	       	 	</div>
 	        </div>
-	      </div>
       </nav>
-</nav>
