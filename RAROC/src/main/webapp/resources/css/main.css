@@ -757,6 +757,11 @@ div.logoCurve {
 	padding-top: 7%;
 	margin-left: 14%;
 }
+.panel-tabs {
+	height: auto;
+	border-left: none;
+	-webkit-box-shadow: 0 1px rgba(0,0,0,0.3);
+}
 .calc-panel {
 	margin-top: 57px;
 	font-size: 17px;
@@ -767,7 +772,6 @@ a:hover{
 }
 .navbar1 {
     background: none !important;
-    
     width: 100%;
 }
 .nav-logo-curve {
@@ -778,27 +782,6 @@ a:hover{
 	width: 100%;
 	
 }
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content a:hover {background-color: #ddd;}
-
-.dropdown:hover .dropdown-content {display: block;}
-
-.dropdown:hover .dropbtn {background-color: #3e8e41;}
 
 ul {
   list-style: none;
@@ -810,7 +793,7 @@ ul {
 ul li {
   display: block;
   position: relative;
-  float: left;
+  float: none;
    
 }
 

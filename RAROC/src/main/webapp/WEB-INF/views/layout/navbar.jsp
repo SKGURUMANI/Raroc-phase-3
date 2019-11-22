@@ -105,14 +105,13 @@
         </div>
     </div> --%>
     <ul class="nav navbar-top-links navbar-right">
-        <li class="dropdown">
-            <small  style="color: #fff;">Last Login: ${sessionScope.lastLogin}</small>
-         </li>
-        <li class="dropdown"><a
-                href="<c:url value='${sessionScope.homepage}'/>"> <i
-                    class="fa fa-home fa-fw"></i> Home
+        <li class="dropdown"><a>
+            Last Login: ${sessionScope.lastLogin}         
+        </a></li>
+         <li class="dropdown"><a>
+               User: ${sessionScope.username}
             </a></li>
-
+	<%--
         <sec:authorize url="/admin">
             <li class="dropdown"><a href="<c:url value='/admin'/>"> <i
                         class="fa fa-cog fa-fw"></i> Admin
@@ -120,7 +119,7 @@
             </sec:authorize>
         <li class="dropdown"><a href="#"> <i
                     class="fa fa-question-circle fa-fw"></i> Help
-            </a></li>
+            </a></li> --%>
         <li class="dropdown">
             <form id="logout" action="<c:url value="/logout" />" method="post">
                 <input type="hidden" name="${_csrf.parameterName}"
@@ -245,40 +244,24 @@
 	        </div>
 	        <div id="navbar" class="navbar-collapse collapse menu-container">
 			     <div id="navbar" class="navbar-collapse collapse menu-container">
-		        	<div class="panel panel-breadcrumb" style="height: 84px;border-left: none;-webkit-box-shadow: 0 1px rgba(0,0,0,0.3);">
+		        	<div class="panel panel-breadcrumb panel-tabs">
                          <div class="panel-body">
-						    <%-- <ul class="nav navbar-nav">
-							    <li><a href="<c:url value='${sessionScope.homepage}'/>">Home</a></li>
-							     <li class="dropdown">
-								      <a href="#">Admin</a>
-									     <div class="dropdown-content">
-										    <a class="dropdown" href="#">User Management >></a>
-										    	<div class="dropdown-content">
-												    <a href="#">User Management</a>
-												    <a href="#">Audit Log</a>
-										  		</div>
-										    <a href="#">Audit Logs >></a>
-										  </div>
-							     </li>
-							     <li><a href="#">Help</a></li>
-							 </ul>
- --%>                          
 							 <ul class="nav navbar-nav">
-							  <li><a href="#">Home</a></li>
+							  <li><a  href="<c:url value='${sessionScope.homepage}'/>">Home</a></li>
 							  <li><a href="#">Admin</a>
 							    <ul>
-							      <li><a href="#">HTML</a></li>
-							      <li><a href="#">CSS</a>
+							      <li><a href="#">User Management >></a>
 							        <ul>
-							          <li><a href="#">Resets</a></li>
-							          <li><a href="#">Grids</a></li>
-							          <li><a href="#">Frameworks</a></li>
+							          <li><a href="<c:url value='/admin/create'/>"class="ajaxNav">Create User</a></li>
+							          <li><a href="<c:url value='/admin/modify'/>"class="ajaxNav">Modify User</a></li>
+							          <li><a href="<c:url value='/admin/sack'/>"class="ajaxNav">Sack User</a></li>
 							        </ul>
 							      </li>
-							      <li><a href="#">JavaScript</a>
+							      <li><a href="#">Audit Logs >></a>
 							        <ul>
-							          <li><a href="#">Ajax</a></li>
-							          <li><a href="#">jQuery</a></li>
+							          <li><a href="<c:url value='admin/sysLog'/>"class="ajaxNav">System Log</a></li>
+							          <li><a href="<c:url value='admin/opsLog'/>"class="ajaxNav">Operations Log</a></li>
+							          <li><a href="<c:url value='admin/prsLog'/>"class="ajaxNav">Process Log</a></li>
 							        </ul>
 							      </li>
 							    </ul>
