@@ -7,6 +7,7 @@ body, html {
   height: 100%;
   font-size: 0.9em;
   background-color: #AE285D;
+  font-family:Lato-Bold;
 }
 body.login {
   background-color: #fff;  
@@ -316,7 +317,7 @@ form, label {
     overflow-y: scroll;
 }
 .login-panel {
-    margin-top: 25%;    
+    margin-top: 45%;    
 }
 .login-panel .panel-heading {
     color: #ef7f1b;
@@ -473,11 +474,35 @@ table.dataTable thead .sorting:after {
 }
 .footer  {
     padding-top: 3px;
-    height: 24px; 
+    height: 37px; 
     border-top: 1px solid #DDDDDD;
     text-align: center;
-    background: white !important;
+    background-color: #444444;
+   
 }
+
+.footer a {
+	 color:#ffffff;
+
+	}
+
+.pull-right{
+	padding:5px;
+}
+.pull-left{
+	padding:5px;
+	
+}
+
+
+.rt360_white_logo_1 {
+
+  width: 41px;
+  height:inherit;
+  object-fit: contain;
+
+}
+
 .page-header {
     margin-top: 20px;
 }
