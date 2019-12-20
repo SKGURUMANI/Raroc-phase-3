@@ -244,20 +244,19 @@
 	        </div>
 	        <div id="navbar" class="navbar-collapse collapse menu-container">
 			     <div id="navbar" class="navbar-collapse collapse menu-container">
-		        	<div class="panel panel-breadcrumb panel-tabs">
-                         <div class="panel-body">
+                         <div class="panel-body" id="top-nav">
 							 <ul class="nav navbar-nav">
 							  <li><a  href="<c:url value='${sessionScope.homepage}'/>">Home</a></li>
 							  <li><a href="#">Admin</a>
 							    <ul>
-							      <li><a href="#">User Management >></a>
+							      <li><a href="#">User Management </a>
 							        <ul>
 							          <li><a href="<c:url value='/admin/create'/>"class="ajaxNav">Create User</a></li>
 							          <li><a href="<c:url value='/admin/modify'/>"class="ajaxNav">Modify User</a></li>
 							          <li><a href="<c:url value='/admin/sack'/>"class="ajaxNav">Sack User</a></li>
 							        </ul>
 							      </li>
-							      <li><a href="#">Audit Logs >></a>
+							      <li><a href="#">Audit Logs</a>
 							        <ul>
 							          <li><a href="<c:url value='admin/sysLog'/>"class="ajaxNav">System Log</a></li>
 							          <li><a href="<c:url value='admin/opsLog'/>"class="ajaxNav">Operations Log</a></li>
@@ -271,5 +270,4 @@
 						</div>
                     </div> 
 	       	 	</div>
-	        </div>
       </nav>

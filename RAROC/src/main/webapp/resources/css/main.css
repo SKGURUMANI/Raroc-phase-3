@@ -6,7 +6,7 @@
 body, html {
   height: 100%;
   font-size: 0.9em;
-  background-color: #AE285D;
+  font-family:Lato-Bold;
 }
 body.login {
   background-color: #fff;  
@@ -21,13 +21,14 @@ form, label {
     background: #97144d;
 }
 #wrapper {
-    height: 100%;
+    height: 80%;
     width: 100%;
+  
 }
 #page-wrapper {
     padding: 100px 15px;
-    background-color: #fff;
-    min-height: 92%;
+    background-color:#fff;
+    height:20%;
 }
 @media(min-width:768px) {
     .page-wrapper-with-sidebar {
@@ -316,7 +317,7 @@ form, label {
     overflow-y: scroll;
 }
 .login-panel {
-    margin-top: 25%;    
+    margin-top: 45%;    
 }
 .login-panel .panel-heading {
     color: #ef7f1b;
@@ -351,6 +352,28 @@ img.bct-logo {
    -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.3);
    box-shadow: 0 0 5px rgba(0,0,0,0.3);
 }
+
+
+
+#top-nav{
+	background-color:#ffffff;
+	-webkit-box-shadow: 0 8px 6px -6px #ccc;
+    -moz-box-shadow: 0 8px 6px -6px #ccc;
+    box-shadow: 0 8px 6px -6px #ccc;
+
+}
+
+#top-nav > ul > li a{
+	font-size:16px;
+	color: #212121;
+	
+}
+#top-nav > ul > li a:hover{
+color: #97134e;
+background-color:#ffffff;
+}
+
+
 .panel-breadcrumb a {
   color: #337ab7;
 }
@@ -473,11 +496,35 @@ table.dataTable thead .sorting:after {
 }
 .footer  {
     padding-top: 3px;
-    height: 24px; 
+    height: 37px; 
     border-top: 1px solid #DDDDDD;
     text-align: center;
-    background: white !important;
+    background-color: #444444;
+   
 }
+
+.footer a {
+	 color:#ffffff;
+
+	}
+
+.pull-right{
+	padding:5px;
+}
+.pull-left{
+	padding:5px;
+	
+}
+
+
+.rt360_white_logo_1 {
+
+  width: 41px;
+  height:inherit;
+  object-fit: contain;
+
+}
+
 .page-header {
     margin-top: 20px;
 }
@@ -730,11 +777,11 @@ span.aggregation {
 }
  
 div.logoCurve {
-    background-color: #fff;
+    background-color:#97144d;
     width: 100px;
     height: 100px;
     float: right;
-    background: #fff url("/RAROC/resources/css/images/AXIS/menucurve.jpg") no-repeat;
+    background:#fff url("/RAROC/resources/css/images/AXIS/menucurve.jpg") no-repeat;
     background-position: 0 0;
     position: relative;
     background-size: 60px 70px;
@@ -812,15 +859,24 @@ ul li a:hover { background:  #ddd; }
 li:hover > ul {
   display: block;
   position: absolute;
+  box-shadow: 5px 10px #ccc;
+  border-top:2px solid #ddd;
 }
 
-li:hover li { float: none; }
 
-li:hover a { background:  #ddd; }
+li:hover li { 
+float: none; 
+}
+
+li:hover a {
+	background:#fff;
+	
+	
+ }
 
 li:hover li a:hover { background: #2c3e50; }
 
-.main-navigation li ul li { border-top: 0; }
+.main-navigation li ul li { border-top: 25px; }
 
 ul ul ul {
   left: 100%;
@@ -829,8 +885,10 @@ ul ul ul {
 
 ul:before,
 ul:after {
-  content: " "; /* 1 */
-  display: table; /* 2 */
+  content: " "; 1
+  display: table; 2
 }
 
-ul:after { clear: both; }
+ul:after { clear: both; }  
+
+

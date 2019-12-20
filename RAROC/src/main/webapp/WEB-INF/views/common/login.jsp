@@ -76,11 +76,10 @@
                 <div class="col-md-4 col-md-offset-4">
                     <div class="login-panel">
                         <div class="panel-heading">
-                            <img class="bct-logo rt-360 center-block" src="<c:url value="/resources/css/images/AXIS/rt360.png"/>"/>
-                            <h5 class="calc">
+                            <h3 class="calc">
                                <%--  <img src="<c:url value="/resources/css/images/logo.png"/>"/> --%>
                                 RAROC Calculator
-                            </h5>
+                            </h3>
                         </div>
                         <div class="panel-body">
                             <input type="hidden" id="phrase" value="<c:out value="${pageContext.session.id}"/>"/>
@@ -124,11 +123,6 @@
                 </div>
             </c:if>
         </div>
-        <div class="footer navbar-fixed-bottom">
-            <div class="col-lg-12">
-                <div class="pull-left"><spring:message code="footer.left"/></div>
-                <div class="pull-right"><a target="_blank" href="http://www.bahwancybertek.com/industries/bfsi"><spring:message code="footer.right"/></a></div>
-            </div>            
-        </div>           
-    </body>
+        <c:import url="/WEB-INF/views/layout/footer.jsp" />
+   </body>
 </html>
