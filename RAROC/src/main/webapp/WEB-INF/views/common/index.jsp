@@ -43,6 +43,7 @@
     <body>
         <div id="wrapper">
             <c:import url="/WEB-INF/views/layout/navbar.jsp" />
+
             <div id="page-wrapper">
                 <div class="container-fluid">
                     <div class="row">
@@ -83,6 +84,8 @@
             </div>
             <!-- /#page-wrapper -->
         </div>
+ 
+            
         <c:import url="/WEB-INF/views/layout/footer.jsp" />
     </body>
 </html>

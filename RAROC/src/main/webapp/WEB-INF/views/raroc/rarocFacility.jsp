@@ -401,3 +401,4 @@
         </div>
     </form:form>
 </div>
+<c:import url="/WEB-INF/views/layout/footer.jsp" />
