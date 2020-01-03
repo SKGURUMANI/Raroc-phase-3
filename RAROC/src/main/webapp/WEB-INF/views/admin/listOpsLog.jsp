@@ -8,11 +8,6 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <script type="text/javascript" src="<c:url value="/resources/scripts/grid/admin/AuditOpsLog.js"/>"></script>
 <div class="col-lg-12 marginTop">
-    <div class="panel panel-breadcrumb">
-        <div class="panel-body">
-            <fmt:message key="breadcrumb.adminOpsLog"/>
-        </div>
-    </div>
     <div class="panel panel-default">
         <div class="panel-body">
             <div class="form-group">

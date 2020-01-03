@@ -4,9 +4,9 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 body, html {
-  height: 100%;
+  height: 90%;
   font-size: 0.9em;
-  background-color: #AE285D;
+  font-family:Lato-Bold;
 }
 body.login {
   background-color: #fff;  
@@ -17,18 +17,22 @@ form, label {
 #wrapper {
     height: 100%;
     width: 100%;
+    min-height: 95%;
+    background-color:#fff;
+    
 }
 #page-wrapper {
     padding: 0 15px;
     background-color: #fff;
-    min-height: 92%;
+    min-height:90%;
 }
 @media(min-width:768px) {
     .page-wrapper-with-sidebar {
         position: inherit;
         margin: 0 0 0 250px;
         padding: 0 30px;
-        border-left: 1px solid #7fb2cc;
+        background-color:#97144d;
+        
     }
     .checkbox-custom,
     .radio-custom {
@@ -161,8 +165,10 @@ form, label {
     margin-right: 15px;
 }
 .navbar-top-links li a {    
+    color:#212121;
     padding: 15px;
     min-height: 50px;
+    padding-top: 7px; 
 }
 .navbar-top-links .dropdown-menu li {
     display: block;
@@ -177,6 +183,37 @@ form, label {
 .navbar-top-links .dropdown-menu li a div {
     white-space: normal;
 }
+
+.navbar-top {
+    margin-right: 0;
+}
+.navbar-top li {
+    display: inline-block;
+}
+.navbar-top li:last-child {
+    margin-right: 15px;
+}
+.navbar-top li a {    
+    color:#fff;
+    font-size:16px;
+    padding: 15px;
+    min-height: 50px;
+}
+.navbar-top .dropdown-menu li {
+    display: block;
+}
+.navbar-top .dropdown-menu li:last-child {
+    margin-right: 0;
+}
+.navbar-top .dropdown-menu li a {
+    padding: 3px 20px;
+    min-height: 0;
+}
+.navbar-top .dropdown-menu li a div {
+    white-space: normal;
+}
+
+
 .sidebar {
     border-radius: 0;
 }
@@ -251,7 +288,8 @@ form, label {
         position: absolute;
         width: 250px;
         max-width: 200px;
-        margin-top: 51px;        
+        margin-top: 51px; 
+        background-color:yellow;       
     }
 }
 .btn-outline {
@@ -309,10 +347,12 @@ form, label {
     overflow-y: scroll;
 }
 .login-panel {
-    margin-top: 25%;    
+    margin-top: 45%;    
 }
 .login-panel .panel-heading {
     color: #ef7f1b;
+    border-bottom: 2px solid #97144d;
+    
 }
 .login-panel .panel-heading h2 {
     font-size: 22px;
@@ -320,7 +360,9 @@ form, label {
     text-align: center;
 }
 .login-panel .panel-body {
-    color: #333;
+   color: #333;
+    padding: 0px;
+    padding-top: 10px;
 }
 img.bank-logo {
   width: 100%; 
@@ -460,12 +502,6 @@ table.dataTable thead .sorting:after {
 }
 .panel-yellow a:hover {
     color: #df8a13;
-}
-.footer  {
-    padding-top: 3px;
-    height: 24px; 
-    border-top: 1px solid #DDDDDD;
-    text-align: center
 }
 .page-header {
     margin-top: 20px;
@@ -651,3 +687,104 @@ span.aggregation {
     padding-bottom:31px; /*preserve footer space (plus 10px for text spacing)*/
     background: #FFF/*set same as wrapper BG or none at all*/    
 }
+
+.footer  {
+    padding-top: 3px;
+    height: 37px; 
+    border-top: 1px solid #DDDDDD;
+    text-align: center;
+    background-color: #444444;
+   
+}
+
+.footer a {
+	 color:#ffffff;
+
+	}
+
+.pull-right{
+	padding:5px;
+}
+.pull-left{
+	padding:5px;
+	
+}
+
+
+.rt360_white_logo_1 {
+
+  width: 41px;
+  height:inherit;
+  object-fit: contain;
+
+}
+
+.calc {
+	text-align: center;
+	color: #97144d;
+    font-weight: 500;
+}
+
+.navbar-inverse{
+  border-top:20px solid #97144d !important;
+  background-color: grey !important;
+}
+
+.ip-text {
+    border: 0 none;
+    width: 100%;
+    padding: 0 10px;
+    font-size: 16px;
+    color: #363636;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    margin-top: 20px;
+    border-bottom: solid 1px #d8d8d8;
+}
+
+.navbar1 {
+    background: none !important;
+    width: 100%;
+}
+.nav-logo-curve {
+	display: inline-block;
+}
+
+.logo {
+    background: url("/RAR/resources/css/images/logo-white.png") no-repeat;
+    background-repeat: no-repeat;
+    background-size: 150px auto;
+    width: 170px;
+}
+.LogoPart {
+    position: relative;
+    left: 0px;
+    background: #97144d;
+    padding: 10px 0 10px 80px;
+    font-family: Arial;
+    font-size: 36px;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 80px;
+}
+ 
+div.logoCurve {
+    background-color:#97144d;
+    width: 100px;
+    height: 100px;
+    float: right;
+    background:#fff url("/RAR/resources/css/images/menucurve.jpg") no-repeat;
+    background-position: 0 0;
+    position: relative;
+    background-size: 60px 70px;
+}
+
+.navbar-axis {
+    min-height: 0px;
+    height: 28px;
+    font-size: 85%;
+    background: #97144d;
+    color:#fff;
+}
+

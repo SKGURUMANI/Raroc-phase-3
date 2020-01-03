@@ -9,11 +9,6 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <script type="text/javascript" src="<c:url value="/resources/scripts/grid/admin/AuditSysLog.js"/>"></script>
 <div class="col-lg-12 marginTop">
-    <div class="panel panel-breadcrumb">
-        <div class="panel-body">
-            <fmt:message key="breadcrumb.adminSysLog"/>
-        </div>
-    </div>
     <div class="panel panel-default">
         <div class="panel-body">
             <div class="form-group">
@@ -21,10 +16,10 @@
                     <label style="margin-top: 8px;" class="control-label"><fmt:message key="label.dateBetween"/>:</label>
                 </div>
                 <div class="col-lg-2 col-md-2">
-                    <input class="form-control" type="text" id="from"/>
+                    <input class="form-control" type="text" id="from" placeholder="From Date"/>
                 </div>
                 <div class="col-lg-2 col-md-2">
-                    <input class="form-control" type="text" id="to"/>
+                    <input class="form-control" type="text" id="to" placeholder="To Date"/>
                 </div>
                 <div class="col-lg-1 col-md-1">
                     <input class="btn btn-default" type="button" id="filterlog" value="Go"/>

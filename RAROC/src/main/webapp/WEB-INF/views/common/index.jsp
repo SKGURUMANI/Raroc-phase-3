@@ -2,7 +2,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -44,27 +43,49 @@
     <body>
         <div id="wrapper">
             <c:import url="/WEB-INF/views/layout/navbar.jsp" />
+
             <div id="page-wrapper">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12">
-
-                            <div id="defaultImg">
-                                <img src="<c:url value="/resources/css/images/91.png"/>">
-                            </div>
-
-                        </div>
-                        <!-- /.col-lg-12 -->
+				            <div class="container">
+				            <div class="row">                
+				                <div class="col-md-3 col-md-offset-3 panel-view-1">
+				                    <sec:authorize url="/raroc">
+				                     <a href="<c:url value='/raroc'/>">
+					                    <div class="login-panel panel panel-default panel-border">
+					                        <div class="panel-heading panel-index">
+					                            <h4 class="calc calc-panel">
+					                                RAROC 
+					                            </h4>
+					                        </div>
+					                    </div>    
+				                     </a> 
+				                    </sec:authorize>                
+				                </div>
+				                 <div class="col-md-3 col-md-offset-3 panel-view-2">
+				                  <sec:authorize url="/rarocAuth">
+				                     <a href="<c:url value='/rarocAuth'/>">
+					                    <div class="login-panel panel panel-default panel-border">
+					                        <div class="panel-heading panel-index">
+					                            <h4 class="calc calc-panel">
+					                                RAROC Admin
+					                            </h4>
+					                        </div>
+					                    </div>  
+				                    </a>
+				                    </sec:authorize>                  
+				                </div>
+				            </div>
+				        </div>
+                      </div>
                     </div>
                 </div>
             </div>
             <!-- /#page-wrapper -->
         </div>
-        <div class="footer navbar-fixed-bottom">
-            <div class="col-lg-12">
-                <div class="pull-left"><spring:message code="footer.left"/></div>
-                <div class="pull-right"><a target="_blank" href="http://www.bahwancybertek.com/industries/bfsi"><spring:message code="footer.right"/></a></div>
-            </div>            
-        </div> 
+ 
+            
+        <c:import url="/WEB-INF/views/layout/footer.jsp" />
     </body>
 </html>

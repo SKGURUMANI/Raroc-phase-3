@@ -381,7 +381,7 @@ fieldset[disabled] .btn-danger.active {
   background-image: -webkit-linear-gradient(top, #AE285D 0%, #AE285D 100%);
   background-image:      -o-linear-gradient(top, #AE285D 0%, #AE285D 100%);
   background-image: -webkit-gradient(linear, left top, left bottom, from(#AE285D), to(#AE285D));
-  background-image:         linear-gradient(to bottom, #AE285D 0%, #AE285D 100%);
+  background-image:         linear-gradient(to bottom, #fff 0%, #fff 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffa40032', endColorstr='#ffa40032', GradientType=0);
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
   background-repeat: repeat-x;
@@ -391,7 +391,7 @@ fieldset[disabled] .btn-danger.active {
   border-bottom: none;
 }
 .navbar-default a {
-  color: #fff;
+  color: #212121;
 }
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .active > a {

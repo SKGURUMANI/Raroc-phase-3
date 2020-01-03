@@ -66,9 +66,9 @@
         <script type="text/javascript" src="<c:url value="/resources/scripts/grid/raroc/rarocMasterUser.js"/>"></script>
     </head>
     <body>
-        <div id="wrapper">
-            <c:import url="/WEB-INF/views/layout/navbar.jsp" />
-            <div id="page-wrapper" class="page-wrapper">
+           <c:import url="/WEB-INF/views/layout/navbar.jsp" />
+            <div id="page-wrapper">
+            <div class="page-wrapper">
                 <div class="container-fluid" id="container-fluid">
                     <div class="row">
                         <div class="col-lg-12 marginTop">
@@ -91,7 +91,9 @@
                 </div>
             </div>
             <!-- /#page-wrapper -->
+            
         </div>
+            <c:import url="/WEB-INF/views/layout/footer.jsp" />
 
     </body>
 </html>
