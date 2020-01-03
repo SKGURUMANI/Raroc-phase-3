@@ -178,7 +178,7 @@
 
     <ul class="nav navbar-top-links">
 
-       <li class="dropdown"><a
+       <li class="dropdown"><a style="padding:25px;font-size:16px;"
 
                 href="<c:url value='${sessionScope.homepage}'/>"> <i
 
@@ -190,7 +190,7 @@
 
         <sec:authorize url="/admin">
 
-            <li class="dropdown"><a href="<c:url value='/admin'/>"> <i
+            <li class="dropdown"><a style="padding:25px;font-size:16px;" href="<c:url value='/admin'/>"> <i
 
                         class="fa fa-cog fa-fw"></i> Admin
 
@@ -198,7 +198,7 @@
 
             </sec:authorize>
 
-        <li class="dropdown"><a href="#"> <i
+        <li class="dropdown"><a  style="padding:25px;font-size:16px;" href="#"> <i
 
                     class="fa fa-question-circle fa-fw"></i> Help
 
