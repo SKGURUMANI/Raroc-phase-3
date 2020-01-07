@@ -125,11 +125,11 @@
             <small>Last Login: ${sessionScope.lastLogin}</small>
         </div>
     </div> --%>
-    <ul class="nav navbar-top-links navbar-right">
-        <li class="dropdown"><a style="color:#fff;">
+    <ul class="nav navbar-top navbar-right">
+        <li class="dropdown"><a>
             Last Login: ${sessionScope.lastLogin}         
         </a></li>
-         <li class="dropdown"><a style="color:#fff;">
+         <li class="dropdown"><a>
                User: ${sessionScope.username}
             </a></li>
 	<%--
@@ -145,7 +145,7 @@
             <form id="logout" action="<c:url value="/logout" />" method="post">
                 <input type="hidden" name="${_csrf.parameterName}"
                        value="${_csrf.token}" />
-            </form> <a href="#" style="color:#fff;" onclick="document.getElementById('logout').submit()">
+            </form> <a href="#"onclick="document.getElementById('logout').submit()">
                 <i class="fa fa-sign-out fa-fw"></i> Log Out
             </a>
         </li>
@@ -416,3 +416,4 @@
     </c:if>
 
 </nav>
+ <div style="clear:both"></div>

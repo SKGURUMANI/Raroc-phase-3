@@ -42,7 +42,7 @@ public class LoginController {
     public String logout(Map<String, Object> map, HttpServletRequest request) {                
         if (securityContextAccessor.isCurrentAuthenticationAnonymous()) {
             map.put("logout", messageSource.getMessage("logout", null, "Logged out", null));
-            return "common/login";
+            return "common/logout";
         } else {
             return "common/redirect";
         }        

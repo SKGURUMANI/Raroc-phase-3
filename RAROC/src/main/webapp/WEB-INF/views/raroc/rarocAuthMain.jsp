@@ -72,8 +72,9 @@
         <script type="text/javascript" src="<c:url value="/resources/scripts/grid/raroc/rarocAuth.js"/>"></script>
     </head>
     <body>
+      <c:import url="/WEB-INF/views/layout/navbar.jsp" />
+    
         <div id="wrapper">
-            <c:import url="/WEB-INF/views/layout/navbar.jsp" />
             <div id="page-wrapper" class="page-wrapper">
                 <div class="container-fluid" id="container-fluid">
                     <div class="row">
