@@ -21,7 +21,29 @@
         <link rel="shortcut icon" type="image/x-icon" href="<c:url value="/resources/css/images/bct.ico"/>">
         <link rel="stylesheet" type="text/css" media="screen" href="./resources/jqGrid/css/trirand/ui.jqgrid-bootstrap.css" />
         <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/atrix-ui.css"/>">
-
+			<style>
+		
+		            .ui-jqdialog {
+		
+		                display: none;
+		
+		                width: 300px;
+		
+		                position: absolute;
+		
+		                padding: .2em;
+		
+		                font-size: 11px;
+		
+		                overflow: visible;
+		
+		                left: 30% !important;
+		
+		                top: 40% !important;
+		
+		            }
+		
+		        </style>
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -95,15 +117,7 @@
 
                 </div>
             </div>
-            <!--            <div id="inner">
-                            <div class="container">
-                                <div id="jqgrid" class="spacingBottom"> 
-                                    <input type="hidden" name="_tk" id="_tk"/>
-                                    <table id="grid"></table>
-                                    <div id="pager"></div>                    
-                                </div>
-                            </div>
-                        </div>-->
+           
         </div>
                     <c:import url="/WEB-INF/views/layout/footer.jsp" />
         

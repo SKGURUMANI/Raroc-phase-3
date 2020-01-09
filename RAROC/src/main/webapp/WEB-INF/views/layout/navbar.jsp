@@ -416,4 +416,3 @@
     </c:if>
 
 </nav>
- <div style="clear:both"></div>

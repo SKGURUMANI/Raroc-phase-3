@@ -48,6 +48,7 @@ $(function() {
         index: 'v_rec_ref_no',
         label: 'Reference No',
         width: '30'
+
     }, params3 = {
         name: 'cid',
         index: 'v_rating_tool_id',
