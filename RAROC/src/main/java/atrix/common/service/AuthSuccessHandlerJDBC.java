@@ -67,6 +67,8 @@ public class AuthSuccessHandlerJDBC extends SimpleUrlAuthenticationSuccessHandle
         	role="Auth";
         }if (roleslist.contains("ROLE_ADMIN") && !roleslist.contains("ROLE_RAROC_AUTH")) {
         	role="Administrator";
+        }if (roleslist.contains("ROLE_ADMIN") && roleslist.contains("ROLE_RAROC_CORP")) {
+        	role="Corp";
         }
        
         if (firstLogin) {

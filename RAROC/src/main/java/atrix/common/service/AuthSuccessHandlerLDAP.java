@@ -59,6 +59,8 @@ public class AuthSuccessHandlerLDAP extends SimpleUrlAuthenticationSuccessHandle
         	role="Auth";
         }if (roleslist.contains("ROLE_ADMIN") && !roleslist.contains("ROLE_RAROC_AUTH")) {
         	role="Administrator";
+        }if (roleslist.contains("ROLE_ADMIN") && roleslist.contains("ROLE_RAROC_CORP")) {
+        	role="Corp";
         }
         session.setAttribute("username", model.getUsername());
         session.setAttribute("homepage", model.getHomepage());           

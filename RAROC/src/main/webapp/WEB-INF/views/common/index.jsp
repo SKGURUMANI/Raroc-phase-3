@@ -193,6 +193,54 @@
                         </div>
                     </sec:authorize> 
                   </c:if>
+                    <c:if test="${sessionScope.role=='Corp'}"> 
+                     <sec:authorize url="<c:url value='/raroc'/>">
+                        <div class="col-lg-4 col-md-4"  style="padding-top: 180px;">
+                            <div class="panel"  style="background-color: #97144d">
+                                <div class="panel-heading">
+                                    <div class="row">
+                                        <div class="col-xs-3">
+                                            <i class="fa fa-user fa-3x"  style="color: floralwhite"></i>
+                                        </div>
+                                        <div class="col-xs-9 text-right">
+                                            <div style="color: floralwhite"><h4>RAROC User</h4></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="<c:url value='/raroc'/>">
+                                    <div id="ewiDetails" class="panel-footer">
+                                        <span class="pull-left">View Details</span>
+                                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </sec:authorize>
+                    <sec:authorize url="<c:url value='/admin'/>">
+                        <div class="col-lg-4 col-md-4"  style="padding-top: 180px;">
+
+                            <div class="panel" style="background-color: #97144d">
+                                <div class="panel-heading">
+                                    <div class="row">
+                                        <div class="col-xs-3" style="color: floralwhite">
+                                            <i class="fa fa-cog fa-fw fa-3x"></i>
+                                        </div>
+                                        <div class="col-xs-9 text-right">
+                                            <div style="color: floralwhite"><h4>RAROC Administrator</h4></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="<c:url value='/admin'/>">
+                                    <div id="ewiDetails" class="panel-footer">
+                                        <span class="pull-left">View Details</span>
+                                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </a>
+                            </div>
+                    </sec:authorize>
+                    </c:if>
                     
                 </div>
 
