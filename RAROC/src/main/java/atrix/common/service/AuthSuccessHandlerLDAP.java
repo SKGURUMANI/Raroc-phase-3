@@ -52,10 +52,13 @@ public class AuthSuccessHandlerLDAP extends SimpleUrlAuthenticationSuccessHandle
         String roles= model.getRole();
         String role=null;
         List<String> roleslist = Arrays.asList(roles.split(","));
-        if (roleslist.contains("Administrator")) {
+        if (roleslist.contains("ROLE_ADMIN") && roleslist.contains("ROLE_RAROC_AUTH")) {
+        	role="AdminAuth";
+        	System.out.println(role);
+        }if (roleslist.contains("ROLE_RAROC_AUTH") && !roleslist.contains("ROLE_ADMIN")) {
+        	role="Auth";
+        }if (roleslist.contains("ROLE_ADMIN") && !roleslist.contains("ROLE_RAROC_AUTH")) {
         	role="Administrator";
-        }else {
-        	role="Not Administrator";
         }
         session.setAttribute("username", model.getUsername());
         session.setAttribute("homepage", model.getHomepage());           

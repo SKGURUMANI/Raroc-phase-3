@@ -125,10 +125,10 @@ public class SecurityDaoImpl extends JdbcDaoSupport implements SecurityDao {
     public SecurityModel getPreferences(String userid) {
         String sql = "SELECT substr(v_username,1,18) , nvl(v_home_page,'welcome'), nvl(v_locale,'en'), d_last_login,\n"
                 + "                nvl(n_session_time,900), n_currency_unit, (Select LISTAGG(u_role, ',') WITHIN GROUP (ORDER BY N_USER_ROLE_ID) from ( "
-                + "                                                           SELECT CASE WHEN V_AUTHORITY = 'ROLE_RAROC_AUTH' THEN 'RAROC Authorizer' "
-                + "                                                                       WHEN V_AUTHORITY = 'ROLE_ADMIN' THEN 'Administrator' "
-                + "                                                                       WHEN V_AUTHORITY = 'ROLE_USER' THEN 'Risk User' "
-                + "                                                                       WHEN V_AUTHORITY = 'ROLE_RAROC_CORP' THEN 'RAROC Corp' end u_role, N_USER_ROLE_ID "
+                + "                                                           SELECT CASE WHEN V_AUTHORITY = 'ROLE_RAROC_AUTH' THEN 'ROLE_RAROC_AUTH' "
+                + "                                                                       WHEN V_AUTHORITY = 'ROLE_ADMIN' THEN 'ROLE_ADMIN' "
+                + "                                                                       WHEN V_AUTHORITY = 'ROLE_USER' THEN 'ROLE_USER' "
+                + "                                                                       WHEN V_AUTHORITY = 'ROLE_RAROC_CORP' THEN 'ROLE_RAROC_CORP' end u_role, N_USER_ROLE_ID "
                 + "                                                           FROM CNFG_USER_ROLES WHERE V_USER_ID = ? ORDER BY N_USER_ROLE_ID)) u_roles "
                 + "                FROM CNFG_USERS WHERE v_user_id = ? ";
         SecurityModel sec;

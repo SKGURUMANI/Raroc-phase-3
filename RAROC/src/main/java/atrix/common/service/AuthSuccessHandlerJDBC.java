@@ -60,13 +60,15 @@ public class AuthSuccessHandlerJDBC extends SimpleUrlAuthenticationSuccessHandle
         String roles= model.getRole();
         String role=null;
         List<String> roleslist = Arrays.asList(roles.split(","));
-        if (roleslist.contains("Administrator")) {
+        if (roleslist.contains("ROLE_ADMIN") && roleslist.contains("ROLE_RAROC_AUTH")) {
+        	role="AdminAuth";
+        	System.out.println(role);
+        }if (roleslist.contains("ROLE_RAROC_AUTH") && !roleslist.contains("ROLE_ADMIN")) {
+        	role="Auth";
+        }if (roleslist.contains("ROLE_ADMIN") && !roleslist.contains("ROLE_RAROC_AUTH")) {
         	role="Administrator";
-        }else {
-        	role="Not Administrator";
         }
-      
-        
+       
         if (firstLogin) {
             session.setAttribute("homepage", "forceChangePass");
             session.setAttribute("userroles", model.getRole());
@@ -79,7 +81,6 @@ public class AuthSuccessHandlerJDBC extends SimpleUrlAuthenticationSuccessHandle
             session.setAttribute("unit", model.getUnit());
             session.setAttribute("userroles", model.getRole());
             session.setAttribute("role",role);
-            System.out.println("rolw"+role);
             securityDao.insertSysAudit("Login", userid, sessionid, userip, "Success");
         }
         session.setMaxInactiveInterval(model.getSessionTime());
