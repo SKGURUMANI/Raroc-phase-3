@@ -95,9 +95,8 @@
                             </div>
                         </div>
                     </sec:authorize>
-                    <c:set var = "role" value="${sessionScope.userroles}"/>
-                    <c:if test="${fn:contains(role,'Administrator')}">
-                        <sec:authorize url="<c:url value='/admin'/>">
+ 					<c:if test="${sessionScope.role=='Administrator'}">  
+                         <sec:authorize url="<c:url value='/admin'/>">
                             <div class="col-lg-4 col-md-4"  style="padding-top: 180px;">
 
                                 <div class="panel" style="background-color: #97144d">

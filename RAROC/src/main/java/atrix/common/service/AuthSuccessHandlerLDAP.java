@@ -9,6 +9,8 @@ import atrix.common.model.SecurityModel;
 import atrix.st.dao.MastersDao;
 import atrix.st.model.MastersModel;
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Locale;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -40,17 +42,25 @@ public class AuthSuccessHandlerLDAP extends SimpleUrlAuthenticationSuccessHandle
         HttpSession session = request.getSession(false);
         String userid = (String) authentication.getName();  
         String password = (String) authentication.getCredentials();
-        System.out.println("password = "+password);
         String sessionid = ((WebAuthenticationDetails) authentication.getDetails()).getSessionId();
         String userip = ((WebAuthenticationDetails) authentication.getDetails()).getRemoteAddress();
         session.setAttribute("userid", userid);
         session.setAttribute("usersi", sessionid);
         session.setAttribute("userip", userip);
         session.setAttribute("pass", password);
-        SecurityModel model = securityDao.getPreferences(userid);                    
+        SecurityModel model = securityDao.getPreferences(userid);   
+        String roles= model.getRole();
+        String role=null;
+        List<String> roleslist = Arrays.asList(roles.split(","));
+        if (roleslist.contains("Administrator")) {
+        	role="Administrator";
+        }else {
+        	role="Not Administrator";
+        }
         session.setAttribute("username", model.getUsername());
         session.setAttribute("homepage", model.getHomepage());           
         session.setAttribute("lastLogin", model.getLastLogin());
+        session.setAttribute("role",role);
         session.setAttribute("unit", model.getUnit());
         securityDao.insertSysAudit("Login", userid, sessionid, userip, "Success");                        
         session.setMaxInactiveInterval(model.getSessionTime());

@@ -9,8 +9,12 @@ import atrix.common.model.SecurityModel;
 import atrix.st.dao.MastersDao;
 import atrix.st.model.MastersModel;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 import java.util.Locale;
+import java.util.StringTokenizer;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -44,7 +48,6 @@ public class AuthSuccessHandlerJDBC extends SimpleUrlAuthenticationSuccessHandle
         HttpSession session = request.getSession(false);
         String userid = (String) authentication.getName();
         String password = (String) authentication.getCredentials();
-        System.out.println("password = "+password);
         String sessionid = ((WebAuthenticationDetails) authentication.getDetails()).getSessionId();
         String userip = ((WebAuthenticationDetails) authentication.getDetails()).getRemoteAddress();
         session.setAttribute("userid", userid);
@@ -54,9 +57,20 @@ public class AuthSuccessHandlerJDBC extends SimpleUrlAuthenticationSuccessHandle
         Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
         boolean firstLogin = authorities.contains(new SimpleGrantedAuthority("ROLE_PASSWORD_CHANGE"));
         SecurityModel model = securityDao.getPreferences(userid);
+        String roles= model.getRole();
+        String role=null;
+        List<String> roleslist = Arrays.asList(roles.split(","));
+        if (roleslist.contains("Administrator")) {
+        	role="Administrator";
+        }else {
+        	role="Not Administrator";
+        }
+      
+        
         if (firstLogin) {
             session.setAttribute("homepage", "forceChangePass");
             session.setAttribute("userroles", model.getRole());
+            session.setAttribute("role",role);
             securityDao.insertSysAudit("Login", userid, sessionid, userip, "First login by the user");
         } else {
             session.setAttribute("username", model.getUsername());
@@ -64,6 +78,8 @@ public class AuthSuccessHandlerJDBC extends SimpleUrlAuthenticationSuccessHandle
             session.setAttribute("lastLogin", model.getLastLogin());
             session.setAttribute("unit", model.getUnit());
             session.setAttribute("userroles", model.getRole());
+            session.setAttribute("role",role);
+            System.out.println("rolw"+role);
             securityDao.insertSysAudit("Login", userid, sessionid, userip, "Success");
         }
         session.setMaxInactiveInterval(model.getSessionTime());
