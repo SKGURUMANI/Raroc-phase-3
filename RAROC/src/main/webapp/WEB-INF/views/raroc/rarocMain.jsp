@@ -15,29 +15,29 @@
         <link rel="shortcut icon" type="image/x-icon" href="<c:url value="/resources/css/images/bct.ico"/>">
         <link rel="stylesheet" type="text/css" media="screen" href="./resources/jqGrid/css/trirand/ui.jqgrid-bootstrap.css" />
         <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/atrix-ui.css"/>">
-		  <style>
-		
-		            .ui-jqdialog {
-		
-		                display: none;
-		
-		                width: 300px;
-		
-		                position: absolute;
-		
-		                padding: .2em;
-		
-		                font-size: 11px;
-		
-		                overflow: visible;
-		
-		                left: 30% !important;
-		
-		                top: 40% !important;
-		
-		            }
-		
-		        </style>
+        <style>
+
+            .ui-jqdialog {
+
+                display: none;
+
+                width: 300px;
+
+                position: absolute;
+
+                padding: .2em;
+
+                font-size: 11px;
+
+                overflow: visible;
+
+                left: 30% !important;
+
+                top: 40% !important;
+
+            }
+
+        </style>
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -55,21 +55,12 @@
 
         <script type="text/ecmascript" src="./resources/jqGrid/js/trirand/i18n/grid.locale-en.js"></script>
         <script type="text/ecmascript" src="./resources/jqGrid/js/trirand/jquery.jqGrid.min.js"></script>
-
-
-
         <script>
             $.jgrid.defaults.styleUI = 'Bootstrap';
         </script>
-
-
         <!--        <script type="text/ecmascript" src="./resources/jqGrid/js/ui.multiselect.js"></script>-->
         <script type="text/ecmascript" src="./resources/js/bootstrap-datepicker.js"></script>
         <script type="text/ecmascript" src="./resources/jqGrid/js/bootstrap3-typeahead.js"></script>
-
-
-
-
         <link rel="stylesheet" type="text/css" media="screen" href="./resources/jqGrid/css/ui.multiselect.css" />
         <link rel="stylesheet" type="text/css" media="screen" href="./resources/css/bootstrap-datepicker.css" />
 
@@ -86,11 +77,11 @@
         <script type="text/javascript" src="<c:url value="/resources/scripts/template.js"/>"></script>
         <script type="text/javascript" src="<c:url value="/resources/scripts/config/highslideConfig.js"/>"></script>
         <script type="text/javascript" src="<c:url value="/resources/scripts/grid/raroc/rarocMasterUser.js"/>"></script>
-        
+
     </head>
     <body>
-           <c:import url="/WEB-INF/views/layout/navbar.jsp" />
-            <div id="wrapper">
+        <c:import url="/WEB-INF/views/layout/navbar.jsp" />
+        <div id="wrapper">
             <div id="page-wrapper" class="page-wrapper">
                 <div class="container-fluid" id="container-fluid">
                     <div class="row">
@@ -114,9 +105,7 @@
                 </div>
             </div>
             <!-- /#page-wrapper -->
-            
-        </div>
             <c:import url="/WEB-INF/views/layout/footer.jsp" />
-
+        </div>
     </body>
 </html>

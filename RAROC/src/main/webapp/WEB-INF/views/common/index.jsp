@@ -2,6 +2,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 
 <html lang="en">
@@ -48,48 +49,88 @@
 
             <div id="page-wrapper">
                 <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-lg-12">
-				            <div class="container">
-				            <div class="row">                
-				                <div class="col-md-3 col-md-offset-3 panel-view-1">
-				                    <sec:authorize url="/raroc">
-				                     <a href="<c:url value='/raroc'/>">
-					                    <div class="login-panel panel panel-default panel-border">
-					                        <div class="panel-heading panel-index">
-					                            <h4 class="calc calc-panel">
-					                                RAROC 
-					                            </h4>
-					                        </div>
-					                    </div>    
-				                     </a> 
-				                    </sec:authorize>                
-				                </div>
-				                 <div class="col-md-3 col-md-offset-3 panel-view-2">
-				                  <sec:authorize url="/rarocAuth">
-				                     <a href="<c:url value='/rarocAuth'/>">
-					                    <div class="login-panel panel panel-default panel-border">
-					                        <div class="panel-heading panel-index">
-					                            <h4 class="calc calc-panel">
-					                                RAROC Admin
-					                            </h4>
-					                        </div>
-					                    </div>  
-				                    </a>
-				                    </sec:authorize>                  
-				                </div>
-				            </div>
-				        </div>
-                      </div>
-                    </div>
+                    <sec:authorize url="<c:url value='/raroc'/>">
+                        <div class="col-lg-4 col-md-4"  style="padding-top: 180px;">
+                            <div class="panel"  style="background-color: #97144d">
+                                <div class="panel-heading">
+                                    <div class="row">
+                                        <div class="col-xs-3">
+                                            <i class="fa fa-user fa-3x"  style="color: floralwhite"></i>
+                                        </div>
+                                        <div class="col-xs-9 text-right">
+                                            <div style="color: floralwhite"><h4>RAROC User</h4></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="<c:url value='/raroc'/>">
+                                    <div id="ewiDetails" class="panel-footer">
+                                        <span class="pull-left">View Details</span>
+                                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </sec:authorize>
+                    <sec:authorize url="<c:url value='/rarocAuth'/>">
+                        <div class="col-lg-4 col-md-4"  style="padding-top: 180px;">
+                            <div class="panel"  style="background-color: #97144d">
+                                <div class="panel-heading">
+                                    <div class="row">
+                                        <div class="col-xs-3">
+                                            <i class="fa fa-user-secret fa-3x"  style="color: floralwhite"></i>
+                                        </div>
+                                        <div class="col-xs-9 text-right">
+                                            <div style="color: floralwhite"><h4>RAROC Authorizer</h4></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="<c:url value='/rarocAuth'/>">
+                                    <div id="ewiDetails" class="panel-footer">
+                                        <span class="pull-left">View Details</span>
+                                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </sec:authorize>
+                    <c:set var = "role" value="${sessionScope.userroles}"/>
+                    <c:if test="${fn:contains(role,'Administrator')}">
+                        <sec:authorize url="<c:url value='/admin'/>">
+                            <div class="col-lg-4 col-md-4"  style="padding-top: 180px;">
+
+                                <div class="panel" style="background-color: #97144d">
+                                    <div class="panel-heading">
+                                        <div class="row">
+                                            <div class="col-xs-3" style="color: floralwhite">
+                                                <i class="fa fa-cog fa-fw fa-3x"></i>
+                                            </div>
+                                            <div class="col-xs-9 text-right">
+                                                <div style="color: floralwhite"><h4>RAROC Administrator</h4></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="<c:url value='/admin'/>">
+                                        <div id="ewiDetails" class="panel-footer">
+                                            <span class="pull-left">View Details</span>
+                                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </a>
+                                </div>
+                        </sec:authorize>
+                    </c:if>
                 </div>
+
             </div>
-            <!-- /#page-wrapper -->
         </div>
-  		<div class="footer navbar-fixed-bottom">
-		    <div class="col-lg-12">
-		    	<div class="pull-left"><a class="Copyright-2019-Bah" target="_blank" href="http://www.bahwancybertek.com/industries/bfsi"><spring:message code="footer.right"/></a></div>
-		        <div class="pull-right"><img class="rt360_white_logo_1 center-block" src="<c:url value="/resources/css/images/rt-360-white-logo-1.png"/>"/></div>
-		    </div> 
-    </body>
+        <!-- /#page-wrapper -->
+    </div>
+    <div class="footer navbar-fixed-bottom">
+        <div class="col-lg-12">
+            <div class="pull-left"><a class="Copyright-2019-Bah" target="_blank" href="http://www.bahwancybertek.com/industries/bfsi"><spring:message code="footer.right"/></a></div>
+            <div class="pull-right"><img class="rt360_white_logo_1 center-block" src="<c:url value="/resources/css/images/rt-360-white-logo-1.png"/>"/></div>
+        </div> 
+</body>
 </html>

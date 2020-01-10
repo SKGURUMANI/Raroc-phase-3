@@ -61,15 +61,15 @@
 
     .caret.up {
         border-bottom: 5px solid;
-   }
+    }
     .caret.right {
         border-left: 5px solid;
         vertical-align: middle;
     }
 
-   .caret.down {
+    .caret.down {
         border-top: 5px solid;
-	   }
+    }
     .caret.left {
         border-right: 5px solid;
     }
@@ -127,20 +127,20 @@
     </div> --%>
     <ul class="nav navbar-top navbar-right">
         <li class="dropdown"><a>
-            Last Login: ${sessionScope.lastLogin}         
-        </a></li>
-         <li class="dropdown"><a>
-               User: ${sessionScope.username}
+                Last Login: ${sessionScope.lastLogin}         
             </a></li>
-	<%--
-        <sec:authorize url="/admin">
-            <li class="dropdown"><a href="<c:url value='/admin'/>"> <i
-                        class="fa fa-cog fa-fw"></i> Admin
-                </a></li>
-            </sec:authorize>
-        <li class="dropdown"><a href="#"> <i
-                    class="fa fa-question-circle fa-fw"></i> Help
-            </a></li> --%>
+        <li class="dropdown"><a>
+                User: ${sessionScope.username}
+            </a></li>
+            <%--
+            <sec:authorize url="/admin">
+                <li class="dropdown"><a href="<c:url value='/admin'/>"> <i
+                            class="fa fa-cog fa-fw"></i> Admin
+                    </a></li>
+                </sec:authorize>
+            <li class="dropdown"><a href="#"> <i
+                        class="fa fa-question-circle fa-fw"></i> Help
+                </a></li> --%>
         <li class="dropdown">
             <form id="logout" action="<c:url value="/logout" />" method="post">
                 <input type="hidden" name="${_csrf.parameterName}"
@@ -150,15 +150,15 @@
             </a>
         </li>
     </ul>
-   
+
 </nav>
 <nav class="navbar navbar-default navbar-static-top" role="navigation">
-<div class="navbar-header nav-logo-curve">
-	          <div class="LogoPart">
-	            <a class="navbar-brand logo"></a>
-	          </div>
-	          <div class="logoCurve" style="height: 70px;"></div>
-	        </div>
+    <div class="navbar-header nav-logo-curve">
+        <div class="LogoPart">
+            <a class="navbar-brand logo"></a>
+        </div>
+        <div class="logoCurve" style="height: 70px;"></div>
+    </div>
 
     <div class="navbar-header">
 
@@ -178,9 +178,9 @@
 
     <ul class="nav navbar-top-links">
 
-       <li class="dropdown"><a style="padding:25px;font-size:16px;"
+        <li class="dropdown"><a style="padding:25px;font-size:16px;"
 
-                href="<c:url value='${sessionScope.homepage}'/>"> <i
+                                href="<c:url value='${sessionScope.homepage}'/>"> <i
 
                     class="fa fa-home fa-fw"></i> Home
 
@@ -190,13 +190,13 @@
 
         <sec:authorize url="/admin">
 
-            <li class="dropdown"><a style="padding:25px;font-size:16px;" href="<c:url value='/admin'/>"> <i
+<!--            <li class="dropdown"><a style="padding:25px;font-size:16px;" href="<c:url value='/admin'/>"> <i
 
                         class="fa fa-cog fa-fw"></i> Admin
 
-                </a></li>
+                </a></li>-->
 
-            </sec:authorize>
+        </sec:authorize>
 
         <li class="dropdown"><a  style="padding:25px;font-size:16px;" href="#"> <i
 
@@ -279,11 +279,11 @@
 
                                        class="ajaxNav"><i class="fa fa-eraser fa-fw"></i> <fmt:message
 
-                                            key="label.admin.defrag" /></a></li>-->
+                                    key="label.admin.defrag" /></a></li>-->
 
-                                    </c:if>
+                            </c:if>
 
-                                    <c:if test="${menu == 'operations'}">
+                            <c:if test="${menu == 'operations'}">
 
                                 <li><a href="<c:url value='operations/upload'/>"
 
@@ -371,9 +371,9 @@
 
                                     </ul></li>
 
-                                </c:if>
+                            </c:if>
 
-                                <c:if test="${menu == 'thresholds'}">
+                            <c:if test="${menu == 'thresholds'}">
 
                                 <li><a class="ajaxNav"
 
@@ -401,7 +401,7 @@
 
                                             class="fa fa-bell fa-fw"></i> Model Weights</a></li>
 
-                                    </c:if>
+                            </c:if>
 
                         </ul>
 

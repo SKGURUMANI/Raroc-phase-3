@@ -4,22 +4,22 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 body, html {
-  height: 90%;
-  font-size: 0.9em;
-  font-family:Lato-Bold;
+    height: 90%;
+    font-size: 15px;
+    font-family:Lato-Bold;
 }
 body.login {
-  background-color: #fff;  
+    background-color: #fff;  
 }
 form, label {
-  font-weight: normal;
+    font-weight: normal;
 }
 #wrapper {
     height: 100%;
     width: 100%;
     min-height: 95%;
     background-color:#fff;
-    
+
 }
 #page-wrapper {
     padding: 0 15px;
@@ -32,7 +32,7 @@ form, label {
         margin: 0 0 0 250px;
         padding: 0 30px;
         background-color:#97144d;
-        
+
     }
     .checkbox-custom,
     .radio-custom {
@@ -173,8 +173,8 @@ form, label {
 
 .navbar-top-links > li > a:hover, 
 .navbar-top-links > li > a:focus {
-  background-color: #fff;
-  color:#AE285D;
+    background-color: #fff;
+    color:#AE285D;
 }
 
 
@@ -358,7 +358,7 @@ form, label {
 .login-panel .panel-heading {
     color: #ef7f1b;
     border-bottom: 2px solid #97144d;
-    
+
 }
 .login-panel .panel-heading h2 {
     font-size: 22px;
@@ -366,34 +366,34 @@ form, label {
     text-align: center;
 }
 .login-panel .panel-body {
-   color: #333;
+    color: #333;
     padding: 0px;
     padding-top: 10px;
 }
 img.bank-logo {
-  width: 100%; 
-  max-height: 100%;
-  padding: 15px 0;
+    width: 100%; 
+    max-height: 100%;
+    padding: 15px 0;
 }
 img.bct-logo {
-  margin: 0px auto;
-  padding: 15px 0;
+    margin: 0px auto;
+    padding: 15px 0;
 }
 .tree-panel {
     height: 300px;
     overflow-y: auto;
 }
 .panel-breadcrumb {   
-   border-color: #ddd;
-   border-left: 4px solid #AE285D;
-   -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.3);
-   box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    border-color: #ddd;
+    border-left: 4px solid #AE285D;
+    -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
 }
 .panel-breadcrumb a {
-  color: #337ab7;
+    color: #337ab7;
 }
 .panel-breadcrumb a:visited {
-  color: #999;
+    color: #999;
 }
 .flot-chart {
     display: block;
@@ -545,8 +545,8 @@ form label {
     font-weight: normal;
 }
 .loading {
-  padding-top: 200px;   
-  text-align: center;
+    padding-top: 200px;   
+    text-align: center;
 }
 div.circle {
     display: inline-block;    
@@ -575,14 +575,14 @@ div.red {background-color: red}
     padding-top: 10px; 
 }
 .no-gutters {
-  margin-right: 0;
-  margin-left: 0;
+    margin-right: 0;
+    margin-left: 0;
 
-  > .col,
-  > [class*="col-"] {
-    padding-right: 0;
-    padding-left: 0;
-  }
+    > .col,
+    > [class*="col-"] {
+        padding-right: 0;
+        padding-left: 0;
+    }
 }
 .no-padding {
     padding-right: 0;
@@ -592,58 +592,58 @@ div.red {background-color: red}
 .typeahead,
 .tt-query,
 .tt-hint {
-  height: 34px;
-  padding: 6px 12px;
-  line-height: 30px;
-  border: 1px solid #ccc;
-  outline: none;
+    height: 34px;
+    padding: 6px 12px;
+    line-height: 30px;
+    border: 1px solid #ccc;
+    outline: none;
 }
 .typeahead {
-  background-color: #fff;
+    background-color: #fff;
 }
 .typeahead:focus {
-  border: 1px solid #0097cf;
+    border: 1px solid #0097cf;
 }
 .tt-query {
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 }
 .tt-hint {
-  color: #999
+    color: #999
 }
 .tt-menu {
-  width: 422px;
-  margin: 12px 0;
-  padding: 8px 0;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  -webkit-border-radius: 8px;
-     -moz-border-radius: 8px;
-          border-radius: 8px;
-  -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
-     -moz-box-shadow: 0 5px 10px rgba(0,0,0,.2);
-          box-shadow: 0 5px 10px rgba(0,0,0,.2);
-  max-height: 200px;
-  overflow-y: auto;        
+    width: 422px;
+    margin: 12px 0;
+    padding: 8px 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    max-height: 200px;
+    overflow-y: auto;        
 }
 .tt-suggestion {
-  padding: 3px 20px;
-  font-size: 13px;
-  line-height: 24px;
+    padding: 3px 20px;
+    font-size: 13px;
+    line-height: 24px;
 }
 .tt-suggestion:hover {
-  cursor: pointer;
-  color: #fff;
-  background-color: #AE285D;
+    cursor: pointer;
+    color: #fff;
+    background-color: #AE285D;
 }
 .tt-suggestion.tt-cursor {
-  color: #fff;
-  background-color: #AE285D;
+    color: #fff;
+    background-color: #AE285D;
 }
 .tt-suggestion p {
-  margin: 0;
+    margin: 0;
 }
 fieldset legend {
     font-size: 17px;
@@ -700,40 +700,40 @@ span.aggregation {
     border-top: 1px solid #DDDDDD;
     text-align: center;
     background-color: #444444;
-   
+
 }
 
 .footer a {
-	 color:#ffffff;
+    color:#ffffff;
 
-	}
+}
 
 .pull-right{
-	padding:5px;
+    padding:5px;
 }
 .pull-left{
-	padding:5px;
-	
+    padding:5px;
+
 }
 
 
 .rt360_white_logo_1 {
 
-  width: 41px;
-  height:inherit;
-  object-fit: contain;
+    width: 41px;
+    height:inherit;
+    object-fit: contain;
 
 }
 
 .calc {
-	text-align: center;
-	color: #97144d;
+    text-align: center;
+    color: #97144d;
     font-weight: 500;
 }
 
 .navbar-inverse{
-  border-top:20px solid #97144d !important;
-  background-color: grey !important;
+    border-top:20px solid #97144d !important;
+    background-color: grey !important;
 }
 
 .ip-text {
@@ -754,11 +754,11 @@ span.aggregation {
     width: 100%;
 }
 .nav-logo-curve {
-	display: inline-block;
+    display: inline-block;
 }
 
 .logo {
-    background: url("/RAR/resources/css/images/logo-white.png") no-repeat;
+    background: url("/RAROC/resources/css/images/logo-white.png") no-repeat;
     background-repeat: no-repeat;
     background-size: 150px auto;
     width: 170px;
@@ -774,13 +774,13 @@ span.aggregation {
     vertical-align: middle;
     line-height: 80px;
 }
- 
+
 div.logoCurve {
     background-color:#97144d;
     width: 100px;
     height: 100px;
     float: right;
-    background:#fff url("/RAR/resources/css/images/menucurve.jpg") no-repeat;
+    background:#fff url("/RAROC/resources/css/images/menucurve.jpg") no-repeat;
     background-position: 0 0;
     position: relative;
     background-size: 60px 70px;
@@ -795,10 +795,16 @@ div.logoCurve {
 }
 
 .panel-view-1 {
-	padding-top: 7%;
-	margin-left: 18%;
+    padding-top: 7%;
+    margin-left: 18%;
 }
 .panel-view-2 {
-	padding-top: 7%;
-	margin-left: 14%;
+    padding-top: 7%;
+    margin-left: 14%;
+}
+
+.ui-jqgrid {font-weight: normal; font-size: 13px;}
+
+#mytabs li a:hover{
+	color:#fff;
 }
