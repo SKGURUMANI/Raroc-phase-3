@@ -63,4 +63,6 @@ public interface SecurityDao {
     
     public void updateAppVersion();
 
+	public String rolerights(List<String> roleslist);
+
 }

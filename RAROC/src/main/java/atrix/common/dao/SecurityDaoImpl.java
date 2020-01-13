@@ -483,4 +483,23 @@ public class SecurityDaoImpl extends JdbcDaoSupport implements SecurityDao {
         String query = "UPDATE APP_DETAILS SET APP_VERSION = SYSTIMESTAMP";
         getJdbcTemplate().update(query);
     }
+    
+    @Override
+    public String rolerights(List<String> roleslist) {
+    	String rolerights=null;
+    	 if (roleslist.contains("ROLE_ADMIN") && roleslist.contains("ROLE_RAROC_AUTH")) {
+    		 rolerights="AdminAuth";
+         }if (roleslist.contains("ROLE_RAROC_AUTH") && !roleslist.contains("ROLE_ADMIN")) {
+        	 rolerights="Auth";
+         }if (roleslist.contains("ROLE_ADMIN") && !roleslist.contains("ROLE_RAROC_AUTH")) {
+        	 rolerights="Administrator";
+         }if (roleslist.contains("ROLE_ADMIN") && roleslist.contains("ROLE_RAROC_CORP")) {
+        	 rolerights="Corp";
+         }if (roleslist.contains("ROLE_RAROC_AUTH") && roleslist.contains("ROLE_RAROC_CORP")) {
+        	 rolerights="CorpAuth";
+         }if (roleslist.contains("ROLE_ADMIN") && roleslist.contains("ROLE_RAROC_AUTH")&&roleslist.contains("ROLE_RAROC_CORP")) {
+        	 rolerights="AdminCorp";
+         }
+    	return rolerights;
+    }
 }

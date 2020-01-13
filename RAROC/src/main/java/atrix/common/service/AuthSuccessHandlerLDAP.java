@@ -50,21 +50,8 @@ public class AuthSuccessHandlerLDAP extends SimpleUrlAuthenticationSuccessHandle
         session.setAttribute("pass", password);
         SecurityModel model = securityDao.getPreferences(userid);   
         String roles= model.getRole();
-        String role=null;
         List<String> roleslist = Arrays.asList(roles.split(","));
-        if (roleslist.contains("ROLE_ADMIN") && roleslist.contains("ROLE_RAROC_AUTH")) {
-        	role="AdminAuth";
-        }if (roleslist.contains("ROLE_RAROC_AUTH") && !roleslist.contains("ROLE_ADMIN")) {
-        	role="Auth";
-        }if (roleslist.contains("ROLE_ADMIN") && !roleslist.contains("ROLE_RAROC_AUTH")) {
-        	role="Administrator";
-        }if (roleslist.contains("ROLE_ADMIN") && roleslist.contains("ROLE_RAROC_CORP")) {
-        	role="Corp";
-        }if (roleslist.contains("ROLE_RAROC_AUTH") && roleslist.contains("ROLE_RAROC_CORP")) {
-        	role="CorpAuth";
-        }if (roleslist.contains("ROLE_ADMIN") && roleslist.contains("ROLE_RAROC_AUTH")&&roleslist.contains("ROLE_RAROC_CORP")) {
-        	role="AdminCorp";
-        }
+        String role=securityDao.rolerights(roleslist);
         session.setAttribute("username", model.getUsername());
         session.setAttribute("homepage", model.getHomepage());           
         session.setAttribute("lastLogin", model.getLastLogin());
