@@ -6,13 +6,13 @@
 	http://www.springframework.org/schema/security
 	http://www.springframework.org/schema/security/spring-security.xsd">
         
-    <!-- Database Authentication Success Handler--> 
+    <!-- Database Authentication Success Handler
     <beans:bean id="authenticationSuccessHandler" class="atrix.common.service.AuthSuccessHandlerJDBC"/>     
-    
+    --> 
        
-    <!-- LDAP Authentication Success Handler    
+    <!-- LDAP Authentication Success Handler -->    
     <beans:bean id="authenticationSuccessHandler" class="atrix.common.service.AuthSuccessHandlerLDAP"/>
-   -->      
+     
     
     <beans:bean id="authenticationEntryPoint" class="atrix.common.controller.AjaxAwareEntryPoint">        
         <beans:constructor-arg name="loginUrl" value="/login"/>
@@ -62,7 +62,7 @@
         </session-management>
     </http>
     
-    <!-- Database Authentication And Authorization   -->
+    <!-- Database Authentication And Authorization  
     <beans:bean id="jdbcUserService" class="atrix.common.service.UserDetailsServiceJDBC"/>
     <beans:bean id="passwordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
     
@@ -72,8 +72,8 @@
        </authentication-provider>        
    </authentication-manager>        
    
-    
-    <!-- LDAP Authentication And Authorization 
+     -->
+    <!-- LDAP Authentication And Authorization  -->
     <beans:bean id="userCtxAuthMapper" class="atrix.common.service.UserDetailsServiceLDAP"/>    
     <beans:bean id="adAuthProvider" 
                 class="atrix.common.service.ADAuthenticationProvider">
@@ -87,5 +87,5 @@
     <authentication-manager>
         <authentication-provider ref="adAuthProvider"/>
     </authentication-manager>
-    -->
+   
 </beans:beans>
