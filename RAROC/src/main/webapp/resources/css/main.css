@@ -757,21 +757,29 @@ span.aggregation {
     display: inline-block;
 }
 
+#navbar-brand{
+	float: left;
+height: 50px;
+padding: 15px 0px;
+font-size: 18px;
+line-height: 20px;
+background-color: #97144d;
+background-image: url("/RAROC/resources/css/images/logo-white.png") no-repeat;
+}
 .logo {
     background: url("/RAROC/resources/css/images/logo-white.png") no-repeat;
     background-repeat: no-repeat;
-    background-size: 150px auto;
+    background-size: 170px auto;
     width: 170px;
 }
 .LogoPart {
-    position: relative;
+	position: relative;
     left: 0px;
     background: #97144d;
-    padding: 10px 0 10px 80px;
+    padding: 10px 0 9.9px 80px;
     font-family: Arial;
     font-size: 36px;
     display: inline-block;
-    vertical-align: middle;
     line-height: 80px;
 }
 
@@ -783,7 +791,7 @@ div.logoCurve {
     background:#fff url("/RAROC/resources/css/images/menucurve.jpg") no-repeat;
     background-position: 0 0;
     position: relative;
-    background-size: 60px 70px;
+    background-size: 60px 76.49px;
 }
 
 .navbar-axis {

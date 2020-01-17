@@ -63,8 +63,8 @@
 	      <div class="">
 	        <div class="navbar-header nav-logo-curve">
 	          <div class="LogoPart">
-	            <a class="navbar-brand logo"></a>
-	          </div>
+                    <img style='height: 100%; width: 100%; object-fit: contain'src="<c:url value="/resources/css/images/logo-white.png"/>"/> 
+                </div>
 	          <div class="logoCurve"></div>
 	        </div>
 	        <div id="navbar" class="navbar-collapse collapse menu-container">

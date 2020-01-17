@@ -154,10 +154,10 @@
 </nav>
 <nav class="navbar navbar-default navbar-static-top" role="navigation">
     <div class="navbar-header nav-logo-curve">
-        <div class="LogoPart">
-            <a class="navbar-brand logo"></a>
-        </div>
-        <div class="logoCurve" style="height: 70px;"></div>
+     <div class="LogoPart">
+                    <img style='height: 100%; width: 100%; object-fit: contain'src="<c:url value="/resources/css/images/logo-white.png"/>"/> 
+                </div>
+             <div class="logoCurve" style="height: 80px;"></div>
     </div>
 
     <div class="navbar-header">

@@ -499,7 +499,10 @@ public class SecurityDaoImpl extends JdbcDaoSupport implements SecurityDao {
         	 rolerights="CorpAuth";
          }if (roleslist.contains("ROLE_ADMIN") && roleslist.contains("ROLE_RAROC_AUTH")&&roleslist.contains("ROLE_RAROC_CORP")) {
         	 rolerights="AdminCorp";
+         }if (roleslist.contains("ROLE_RAROC_CORP") && !roleslist.contains("ROLE_RAROC_AUTH")&& !roleslist.contains("ROLE_ADMIN")) {
+        	 rolerights="RoleCorp";
          }
+         
     	return rolerights;
     }
 }
