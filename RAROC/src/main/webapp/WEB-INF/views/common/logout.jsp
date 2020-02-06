@@ -83,11 +83,11 @@
 				                </div>
 				            </c:if>
                             <input type="hidden" id="phrase" value="<c:out value="${pageContext.session.id}"/>"/>
-                            <form role="form" name='f' action="<c:url value='/login' />" method='POST'>
+                           <%--  <form role="form" name='f' action="<c:url value='/login' />" method='POST'>
                                 <br/>
                                 <a class="btn btn-lg btn-default btn-login"  style="margin-left:40%;"href="<c:url value='/login'/>">Login</a>
-                                <br/>
-                            </form>
+                                <br/>   // commented for SSO and the client dont want
+                            </form> --%> 
                         </div>
                     </div>                    
                 </div>

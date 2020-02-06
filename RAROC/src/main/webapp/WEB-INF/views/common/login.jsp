@@ -27,8 +27,8 @@
         <!-- jQuery -->
         <script type="text/javascript" src="<c:url value="/resources/js/jquery.min.js"/>"></script>
         <script type="text/javascript" src="<c:url value="/resources/js/bootstrap.min.js"/>"></script> 
-        <script type="text/javascript" src="<c:url value="/resources/js/crypto.js"/>"></script>        
-        <script type="text/javascript" src="<c:url value="/resources/scripts/config/appSec.js"/>"></script>
+<%--         <script type="text/javascript" src="<c:url value="/resources/js/crypto.js"/>"></script>       // commented for SSO 
+ --%>        <script type="text/javascript" src="<c:url value="/resources/scripts/config/appSec.js"/>"></script>
     </head>
     <body class="login">
         <%-- <div class="maroontheme"> 
@@ -91,9 +91,9 @@
                             <br/>
                             <div class="form-group">
                                 <input class="ip-text" placeholder="Password" name="password" type="password" value="" autocomplete="off">
-                                <input type="hidden" name="salt"/>
-                                <input type="hidden" name="iv"/>
-                            </div>
+<!--                                 <input type="hidden" name="salt"/>
+                                <input type="hidden" name="iv"/>   //  commented for SSO
+ -->                            </div>
                             <br/>
                             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                             <input class="btn btn-lg btn-default btn-block btn-login" type="submit" value="<spring:message code="form.login"/>"/>
